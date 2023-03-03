@@ -1,0 +1,2 @@
+require("kaitachi")
+print("Hello")
