@@ -1,2 +1,2 @@
 require("kaitachi")
-print("Hello")
+-- print("Hello")
