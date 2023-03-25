@@ -4,7 +4,10 @@ vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.expandtab = false
+vim.opt.autoindent = true
+vim.opt.list = true
+vim.opt.listchars = { tab = '▷ ', trail = '·', extends = '»', precedes = '«' , nbsp = '○', eol = '↵' }
 
 vim.opt.smartindent = true
 
