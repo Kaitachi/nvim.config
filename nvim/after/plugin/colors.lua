@@ -1,4 +1,5 @@
 function ColorMyPencils(color)
+	-- Use `:echo g:colors_name` to show current color scheme
 	color = color or "spacecamp"
 	vim.cmd.colorscheme(color)
 

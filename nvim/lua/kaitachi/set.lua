@@ -33,4 +33,4 @@ vim.opt.updatetime = 50
 vim.cmd("set nocompatible")
 vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
---vim.opt.colorcolumn = "80"
+

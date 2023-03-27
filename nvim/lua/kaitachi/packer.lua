@@ -7,22 +7,31 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use('wbthomason/packer.nvim')
 
+	-- File Searching
 	use({
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	})
 
+	-- Color Schemes
 	use({'vim-airline/vim-airline'})
 	use({'vim-airline/vim-airline-themes'})
 	use({'jaredgorski/SpaceCamp'})
 
+	-- Treesitter (code structure parsing)
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use('nvim-treesitter/playground')
 
+	-- Harpoon (quick-access files)
 	use('theprimeagen/harpoon')
+
+	-- Undo Tree (git for undo/redo commands)
 	use('mbbill/undotree')
+
+	-- Vim Git (Git for Vim)
 	use('tpope/vim-fugitive')
 
+	-- Language Server Protocol
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v1.x',
@@ -46,5 +55,6 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- Vimwiki
 	use({'vimwiki/vimwiki'})
 end)
