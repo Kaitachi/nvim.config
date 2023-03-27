@@ -1,5 +1,6 @@
 require("kaitachi.remap")
 require("kaitachi.set")
+require("kaitachi.autocmd")
 
 local ensure_packer = function()
   local fn = vim.fn
