@@ -1,4 +1,15 @@
-.DS_Store
-jgit/
+#######################################
+# Ignore essentially everything...
+#######################################
+
+/*
+
+
+#######################################
+# ...but don't ignore our nvim/ folder
+#######################################
+
+!nvim/
 nvim/plugin/
 nvim/templates/
+
