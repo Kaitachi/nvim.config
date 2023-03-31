@@ -1,8 +1,8 @@
 local projects = nil
 
-if (os.getenv("HOME") ~= '') then
+if (os.getenv("HOME") ~= nil) then
 	projects = os.getenv("HOME") .. '/Developer'
-elseif (os.getenv("UserProfile") ~= '') then
+elseif (os.getenv("UserProfile") ~= nil) then
 	projects = os.getenv("UserProfile") .. '/Projects'
 else
 	projects = 'TEST'
@@ -19,7 +19,7 @@ local config = {
 	projectsFolder = projects,
 	maxDepth = 5,
 	ignoreFolders = { 'node_modules', '.git' },
-	rootWikiFolder = '_wiki',
+	rootWikiFolder = '_ Wiki',
 	wikiConfig = { syntax = 'markdown', ext = '.md' }
 }
 
