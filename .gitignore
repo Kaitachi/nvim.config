@@ -11,5 +11,6 @@
 
 !nvim/
 nvim/plugin/
+nvim/spell/
 nvim/templates/
 
