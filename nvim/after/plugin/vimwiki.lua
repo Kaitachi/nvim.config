@@ -1,25 +1,15 @@
-local projects = nil
-
-if (os.getenv("HOME") ~= nil) then
-	projects = os.getenv("HOME") .. '/Developer'
-elseif (os.getenv("UserProfile") ~= nil) then
-	projects = os.getenv("UserProfile") .. '/Projects'
-else
-	projects = 'TEST'
-end
-
--- print('home is ' .. os.getenv("HOME"))
--- print('projects is ' .. projects)
+local cmd = require("kaitachi.command")
 
 -- Kudos to Mirko Vukušić from dev.to for the snippet below!
 -- https://dev.to/psiho/vimwiki-how-to-automate-wikis-per-project-folder-neovim-3k72
+-- Slightly adapted for compatibility
 
 -- configuration
 local config = {
-	projectsFolder = projects,
+	projectsFolder = cmd.fs.projects,
 	maxDepth = 5,
 	ignoreFolders = { 'node_modules', '.git' },
-	rootWikiFolder = '_ Wiki',
+	rootWikiFolder = '_\\ Wiki',
 	wikiConfig = { syntax = 'markdown', ext = '.md' }
 }
 
@@ -52,24 +42,29 @@ end
 
 -- function to search project folders for root wiki folders (returns system list)
 local function searchForWikis()
-	local command = 'find ' .. config.projectsFolder .. ' -maxdepth ' .. config.maxDepth
+	local exclusions = ""
 
-	if #config.ignoreFolders > 0 then command = command .. " \\(" end
+	if #config.ignoreFolders > 0 then exclusions = "\\(" end
 
 	for _, f in ipairs(config.ignoreFolders) do
-		command = command .. " -path '*/"..f.."/*' -prune"
+		exclusions = exclusions .. " -path '*/"..f.."/*' -prune"
 		if next(config.ignoreFolders,_) == nil then
-			command = command .. " \\) -o"
+			exclusions = exclusions .. " \\) -o"
 		else
-			command = command .. " -o"
+			exclusions = exclusions .. " -o"
 		end
 	end
 
-	command = command .. ' -type d -name ' .. config.rootWikiFolder
-	command = command .. ' -print | '
-	command = command .. ' sed s#' .. config.projectsFolder .. '##'
-	local list = vim.api.nvim_call_function('systemlist', {command})
-	return list
+	local command = string.gsub(cmd.cmd.vimwiki_search, "%%%d+",
+							{
+								["%1"] = config.projectsFolder,
+								["%2"] = config.maxDepth,
+								["%3"] = exclusions,
+								["%4"] = config.rootWikiFolder
+							})
+
+	return vim.api.nvim_call_function('systemlist', {command})
 end
 
 updateVimwikiList(searchForWikis())
+
