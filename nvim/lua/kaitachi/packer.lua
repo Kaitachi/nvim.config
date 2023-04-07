@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
 
 	-- Vim Git (Git for Vim)
 	use('tpope/vim-fugitive')
+	use('airblade/vim-gitgutter')
 
 	-- Language Server Protocol
 	use {
