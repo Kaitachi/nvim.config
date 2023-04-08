@@ -13,13 +13,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz") -- Keep cursor centred when scrolling
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
-
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -44,13 +37,12 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>");
 
 -- Tab management
 vim.keymap.set("n", "<leader>a", "<cmd>tabnew<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>tabclose<CR>")
 vim.keymap.set("n", "<leader>h", "<cmd>tabprevious<CR>")
 vim.keymap.set("n", "<leader>l", "<cmd>tabnext<CR>")
-vim.keymap.set("n", "<leader>t", "<cmd>exe 'tabn '.v:count<CR>") -- use [count]\t to switch to corresponding tab
+vim.keymap.set("n", "<leader>t", "<cmd>exe 'tabn '.v:count1<CR>") -- use [count]\t to switch to corresponding tab
 
