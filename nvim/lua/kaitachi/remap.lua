@@ -47,17 +47,10 @@ vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
+-- Tab management
 vim.keymap.set("n", "<leader>a", "<cmd>tabnew<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>tabclose<CR>")
 vim.keymap.set("n", "<leader>h", "<cmd>tabprevious<CR>")
 vim.keymap.set("n", "<leader>l", "<cmd>tabnext<CR>")
-vim.keymap.set("n", "<leader>1", "<cmd>tabn 1<CR>")
-vim.keymap.set("n", "<leader>2", "<cmd>tabn 2<CR>")
-vim.keymap.set("n", "<leader>3", "<cmd>tabn 3<CR>")
-vim.keymap.set("n", "<leader>4", "<cmd>tabn 4<CR>")
-vim.keymap.set("n", "<leader>5", "<cmd>tabn 5<CR>")
-vim.keymap.set("n", "<leader>6", "<cmd>tabn 6<CR>")
-vim.keymap.set("n", "<leader>7", "<cmd>tabn 7<CR>")
-vim.keymap.set("n", "<leader>8", "<cmd>tabn 8<CR>")
-vim.keymap.set("n", "<leader>9", "<cmd>tabn 9<CR>")
+vim.keymap.set("n", "<leader>t", "<cmd>exe 'tabn '.v:count<CR>") -- use [count]\t to switch to corresponding tab
 
