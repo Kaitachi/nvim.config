@@ -25,7 +25,7 @@ local windows = {
 -- Operating System Mappings
 local op_sys = {
 	Darwin = macos,
-	Windows = windows
+	Windows_NT = windows
 }
 
 -- print("macunix: " .. vim.fn.has("macunix"))
