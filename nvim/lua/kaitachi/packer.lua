@@ -22,6 +22,8 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use('nvim-treesitter/playground')
 
+	use('terrortylor/nvim-comment')
+
 	-- Harpoon (quick-access files)
 	use('theprimeagen/harpoon')
 
