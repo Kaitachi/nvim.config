@@ -5,6 +5,7 @@ local macos = {
 		templates = "~/.config/nvim/templates/skeleton",
 	},
 	cmd = {
+		open_finder = "open ..",
 		file_exists = "test -f %s ; expr 1 - $? ", -- { %1 = file to search }
 		vimwiki_search = "find %1 -maxdepth %2 %3 -type d -name %4 -print | sed s#%1##", -- { %1 = projectsFolder, %2 = maxDepth, %3 = ignoreFolders, %4 = rootWikiFolder }
 	},
@@ -17,6 +18,7 @@ local windows = {
 		templates = "~/.config/nvim/templates/skeleton",
 	},
 	cmd = {
+		open_finder = "start ..",
 		file_exists = "test -f %s ; expr 1 - $? ", -- { %1 = file to search }
 		vimwiki_search = "find %1 -maxdepth %2 %3 -type d -name %4 -print | sed s#%1##", -- { %1 = projectsFolder, %2 = maxDepth, %3 = ignoreFolders, %4 = rootWikiFolder }
 	},
@@ -25,6 +27,7 @@ local windows = {
 -- Operating System Mappings
 local op_sys = {
 	Darwin = macos,
+	Linux = macos,
 	Windows_NT = windows
 }
 

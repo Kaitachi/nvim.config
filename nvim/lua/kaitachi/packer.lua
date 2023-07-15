@@ -60,4 +60,7 @@ return require('packer').startup(function(use)
 
 	-- Vimwiki
 	use({'vimwiki/vimwiki'})
+
+	-- Vim motions practive
+	use({'theprimeagen/vim-be-good'})
 end)

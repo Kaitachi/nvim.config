@@ -5,43 +5,64 @@ source ~/.vimrc
 "" To find Action IDs within IntelliJ:
 "   Use <c-A> to trigger Action palette and search for `Track Action IDs`
 
-
+""" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+""" -- For more examples -- https://jb.gg/share-ideavimrc
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
+set scrolloff=8
+set sidescrolloff=8
 
-" Do incremental searching.
-"set incsearch
-"set hlsearch
+set ideajoin
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
 
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-nmap <c-l> <Action>(NextTab)
-nmap <c-h> <Action>(PreviousTab)
-nmap <leader>tp <Action>(NextSplitter)
-nmap <leader>tn <Action>(PrevSplitter)
+""" --- My Mappings ---
 
-"" Map <leader>b to start build
+" IntelliJ Navigation
+map <leader>p <Action>(ManageRecentProjects)
+
+" Running our project
 map <leader>e <Action>(Run)
-
-"" Map <leader>d to start debug
 map <leader>d <Action>(Debug)
+map <leader>cv <Action>(Coverage)
+map <leader>q <Action>(Stop)
+map <leader>cr <Action>(RedesignedRunConfigurationSelector)
+" Last one doesn't seem to work...
 
-"" Map <leader>cv to start coverage
-nmap <leader>cv <Action>(Coverage)
+" Moving around different buffers
+map <leader>z <Action>(ToggleDistractionFreeMode)
+map <c-h> <Action>(PreviousTab)
+map <c-l> <Action>(NextTab)
+map <leader>tp <Action>(NextSplitter)
+map <leader>tn <Action>(PrevSplitter)
+map <c-\> <Action>(SplitVertically)
+map <c--> <Action>(SplitHorizontally)
+map <c-=> <Action>(UnsplitAll)
+map <c-e> <Action>(RecentFiles)
 
-"" Map \b to toggle the breakpoint on the current line
-map \b <Action>(ToggleLineBreakpoint)
+" Moving around current buffer
+map <leader>o <Action>(FileStructurePopup)
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+map <leader>a <Action>(ShowIntentionActions)
+map <leader>i <Action>(QuickJavaDoc)
+
+" Power-Ups
+map <leader>r <Action>(RenameElement)
+map <leader>R <Action>(RenameFile)
+
+" Searching
+map <leader>/ <Action>(FindInPath)
+
+" Debugging
+nmap <leader>b <Action>(ToggleLineBreakpoint)
+nmap <leader>,b <Action>(ToggleBreakpointEnabled)
+nmap <leader>B <Action>(ToggleBookmark)
+" Ideally, we should somehow only trigger ToggleBreakpointEnabled instead...
+" Or at the very least, try to detect if breakpoint is set (function)...
 
 
-" Find more examples here: https://jb.gg/share-ideavimrc
-
-
-""" User Configurations
