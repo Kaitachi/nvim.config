@@ -23,45 +23,45 @@ map Q gq
 """ --- My Mappings ---
 
 " IntelliJ Navigation
-map <leader>p <Action>(ManageRecentProjects)
+map <leader>P <Action>(ManageRecentProjects)
 
 " Running our project
 map <leader>e <Action>(Run)
 map <leader>d <Action>(Debug)
-map <leader>cv <Action>(Coverage)
+map <leader>c <Action>(Coverage)
 map <leader>q <Action>(Stop)
-map <leader>cr <Action>(RedesignedRunConfigurationSelector)
+map <leader>s <Action>(editRunConfigurations)
 " Last one doesn't seem to work...
 
 " Moving around different buffers
 map <leader>z <Action>(ToggleDistractionFreeMode)
-map <c-h> <Action>(PreviousTab)
-map <c-l> <Action>(NextTab)
-map <leader>tp <Action>(NextSplitter)
-map <leader>tn <Action>(PrevSplitter)
+map <leader>h <Action>(PreviousTab)
+map <leader>l <Action>(NextTab)
+map <c-e> <Action>(RecentFiles)
+map <c-n> <Action>(NextSplitter)
+map <c-p> <Action>(PrevSplitter)
 map <c-\> <Action>(SplitVertically)
 map <c--> <Action>(SplitHorizontally)
 map <c-=> <Action>(UnsplitAll)
-map <c-e> <Action>(RecentFiles)
 
 " Moving around current buffer
+map <leader>a <Action>(ShowIntentionActions)
+map <leader>i <Action>(QuickJavaDoc)
 map <leader>o <Action>(FileStructurePopup)
 map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
-map <leader>a <Action>(ShowIntentionActions)
-map <leader>i <Action>(QuickJavaDoc)
 
 " Power-Ups
-map <leader>r <Action>(RenameElement)
 map <leader>R <Action>(RenameFile)
+map <leader>r <Action>(RenameElement)
 
 " Searching
 map <leader>/ <Action>(FindInPath)
 
 " Debugging
-nmap <leader>b <Action>(ToggleLineBreakpoint)
+nmap <leader>b  <Action>(ToggleLineBreakpoint)
 nmap <leader>,b <Action>(ToggleBreakpointEnabled)
-nmap <leader>B <Action>(ToggleBookmark)
+nmap <leader>B  <Action>(ToggleBookmark)
 " Ideally, we should somehow only trigger ToggleBreakpointEnabled instead...
 " Or at the very least, try to detect if breakpoint is set (function)...
 
