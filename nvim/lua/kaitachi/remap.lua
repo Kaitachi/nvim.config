@@ -6,7 +6,7 @@
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Show explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>P", vim.cmd.Ex)
 
 -- Navigation
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

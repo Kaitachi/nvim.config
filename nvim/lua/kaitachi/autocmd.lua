@@ -52,3 +52,6 @@ function file_exists(name)
 	if (r == "1") then return true else return false end
 end
 
+
+-- Because one cannot simply have it too easy sometimes...
+vim.api.nvim_create_user_command("W", "w", {})
