@@ -1,4 +1,4 @@
-local cmd = require("kaitachi.command")
+local command = require("kaitachi.command")
 
 -- Kudos to Mirko Vukušić from dev.to for the snippet below!
 -- https://dev.to/psiho/vimwiki-how-to-automate-wikis-per-project-folder-neovim-3k72
@@ -6,7 +6,7 @@ local cmd = require("kaitachi.command")
 
 -- configuration
 local config = {
-	projectsFolder = cmd.fs.projects,
+	projectsFolder = command.fs.projects,
 	maxDepth = 5,
 	ignoreFolders = { 'node_modules', '.git' },
 	rootWikiFolder = '_\\ Wiki',
@@ -55,7 +55,7 @@ local function searchForWikis()
 		end
 	end
 
-	local command = string.gsub(cmd.cmd.vimwiki_search, "%%%d+",
+	local command = string.gsub(command.cmd.vimwiki_search, "%%%d+",
 							{
 								["%1"] = config.projectsFolder,
 								["%2"] = config.maxDepth,
