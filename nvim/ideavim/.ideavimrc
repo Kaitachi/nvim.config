@@ -33,7 +33,7 @@ map <leader>q <Action>(Stop)
 map <leader>s <Action>(editRunConfigurations)
 " Last one doesn't seem to work...
 
-" Moving around different buffers
+" Moving around different buffers/tabs
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>h <Action>(PreviousTab)
 map <leader>l <Action>(NextTab)
@@ -44,6 +44,9 @@ map <c-p> <Action>(PrevSplitter)
 map <c-\> <Action>(SplitVertically)
 map <c--> <Action>(SplitHorizontally)
 map <c-=> <Action>(UnsplitAll)
+
+" Vim-like tab management
+map <c-m> <Action>(PinActiveEditorTab)
 
 " Moving around current buffer
 map <leader>a <Action>(ShowIntentionActions)
@@ -65,5 +68,4 @@ nmap <leader>,b <Action>(ToggleBreakpointEnabled)
 nmap <leader>B  <Action>(ToggleBookmark)
 " Ideally, we should somehow only trigger ToggleBreakpointEnabled instead...
 " Or at the very least, try to detect if breakpoint is set (function)...
-
 

@@ -43,11 +43,18 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Tab management
-vim.keymap.set("n", "<leader>a", "<cmd>tabnew<CR>")
-vim.keymap.set("n", "<leader>x", "<cmd>tabclose<CR>")
-vim.keymap.set("n", "<leader>h", "<cmd>tabprevious<CR>")
-vim.keymap.set("n", "<leader>l", "<cmd>tabnext<CR>")
-vim.keymap.set("n", "<leader>t", "<cmd>exe 'tabn '.v:count1<CR>") -- use [count]\t to switch to corresponding tab
+--vim.keymap.set("n", "<leader>a", vim.cmd.tabnew)
+--vim.keymap.set("n", "<leader>x", vim.cmd.tabclose)
+--vim.keymap.set("n", "<leader>h", vim.cmd.tabprevious)
+--vim.keymap.set("n", "<leader>l", vim.cmd.tabnext)
+--vim.keymap.set("n", "<leader>t", "<cmd>exe 'tabn '.v:count1<CR>") -- use [count]\t to switch to corresponding tab
+
+-- Buffer management
+vim.keymap.set("n", "<leader>b", "<cmd>exe 'b '.v:count<CR>") -- use [count]\b to switch to corresponding buffer
+vim.keymap.set("n", "<leader>=", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>-", vim.cmd.bd)
+vim.keymap.set("n", "<leader>h", vim.cmd.bp)
+vim.keymap.set("n", "<leader>l", vim.cmd.bn)
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>");
