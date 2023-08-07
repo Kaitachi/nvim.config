@@ -6,7 +6,7 @@
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Show explorer
-vim.keymap.set("n", "<leader>P", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>=", vim.cmd.Ex)
 
 -- Navigation
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -51,7 +51,6 @@ vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Buffer management
 vim.keymap.set("n", "<leader>b", "<cmd>exe 'b '.v:count<CR>") -- use [count]\b to switch to corresponding buffer
-vim.keymap.set("n", "<leader>=", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>-", vim.cmd.bd)
 vim.keymap.set("n", "<leader>h", vim.cmd.bp)
 vim.keymap.set("n", "<leader>l", vim.cmd.bn)

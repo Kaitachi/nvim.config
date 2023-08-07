@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	})
+	use({'ggandor/leap.nvim'})
 
 	-- Color Schemes
 	use({'vim-airline/vim-airline'})
@@ -22,6 +23,7 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use('nvim-treesitter/playground')
 
+	-- Code utilities
 	use('terrortylor/nvim-comment')
 
 	-- Harpoon (quick-access files)
@@ -32,7 +34,10 @@ return require('packer').startup(function(use)
 
 	-- Vim Git (Git for Vim)
 	use('tpope/vim-fugitive')
-	use('airblade/vim-gitgutter')
+	use('lewis6991/gitsigns.nvim')
+
+	-- Good ol' bookmarks
+	use('MattesGroeger/vim-bookmarks')
 
 	-- Language Server Protocol
 	use {
