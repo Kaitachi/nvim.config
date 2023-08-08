@@ -31,3 +31,7 @@ require'nvim-treesitter.configs'.setup {
 	},
 }
 
+-- nvim-treesitter-context
+vim.cmd('hi link TreesitterContext Conceal')
+vim.cmd('hi link TreesitterContextLineNumber Todo')
+
