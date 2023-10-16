@@ -7,5 +7,7 @@ vim.keymap.set('n', '<leader>/', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>B', builtin.buffers, {})
 vim.keymap.set('n', '<leader>C', builtin.commands, {})
 vim.keymap.set('n', '<leader>K', builtin.keymaps, {})
+vim.keymap.set('n', '<leader>M', builtin.marks, {})
+vim.keymap.set('n', '<leader>P', builtin.planets, {})
 vim.keymap.set('n', '<leader>R', builtin.registers, {})
 
