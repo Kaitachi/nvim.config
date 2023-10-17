@@ -39,11 +39,13 @@ map <leader>h <Action>(PreviousTab)
 map <leader>l <Action>(NextTab)
 map <leader>? <Action>(RecentFiles)
 map <leader>f <Action>(GotoFile)
+map <leader>- <Action>(CloseContent)
 map <c-n> <Action>(NextSplitter)
 map <c-p> <Action>(PrevSplitter)
 map <c-\> <Action>(SplitVertically)
 map <c--> <Action>(SplitHorizontally)
 map <c-=> <Action>(UnsplitAll)
+map gi <Action>(GotoImplementation)
 
 " Vim-like tab management
 map <c-m> <Action>(PinActiveEditorTab)
