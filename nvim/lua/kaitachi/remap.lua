@@ -52,8 +52,8 @@ vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Buffer management
 vim.keymap.set("n", "<leader>\\", "<cmd>exe 'b '.v:count<CR>") -- use [count]\b to switch to corresponding buffer
 vim.keymap.set("n", "<leader>-", vim.cmd.bd)
-vim.keymap.set("n", "<leader>h", vim.cmd.bp)
-vim.keymap.set("n", "<leader>l", vim.cmd.bn)
+vim.keymap.set("n", "<leader>[", vim.cmd.bp)
+vim.keymap.set("n", "<leader>]", vim.cmd.bn)
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>");

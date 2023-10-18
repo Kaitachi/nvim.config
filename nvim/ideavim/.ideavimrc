@@ -35,8 +35,8 @@ map <leader>s <Action>(editRunConfigurations)
 
 " Moving around different buffers/tabs
 map <leader>z <Action>(ToggleDistractionFreeMode)
-map <leader>h <Action>(PreviousTab)
-map <leader>l <Action>(NextTab)
+map <leader>[ <Action>(PreviousTab)
+map <leader>] <Action>(NextTab)
 map <leader>? <Action>(RecentFiles)
 map <leader>f <Action>(GotoFile)
 map <leader>- <Action>(CloseContent)
