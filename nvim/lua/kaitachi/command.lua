@@ -2,7 +2,6 @@ local macos = {
 	fs = {
 		home = os.getenv("HOME"),
 		projects = (os.getenv("HOME") or "") .."/Developer",
-		templates = "~/.config/nvim/templates/skeleton",
 	},
 	cmd = {
 		open_finder = "open ..",
@@ -15,7 +14,6 @@ local windows = {
 	fs = {
 		home = os.getenv("UserProfile"),
 		projects = (os.getenv("UserProfile") or "") .. "/Projects",
-		templates = "~/.config/nvim/templates/skeleton",
 	},
 	cmd = {
 		open_finder = "start ..",
