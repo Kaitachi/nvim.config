@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
 	-- File Searching
 	use({'ggandor/leap.nvim'})
 	use({
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	})
 
@@ -63,6 +63,9 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	})
+
+	-- Golang Support
+	use({'ray-x/go.nvim'})
 
 	-- Vimwiki
 	use({'vimwiki/vimwiki'})
