@@ -16,6 +16,9 @@ set sidescrolloff=8
 
 set ideajoin
 
+" Set up some convenience shortcuts (JIS keyboard)
+map ¥ <leader>
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 

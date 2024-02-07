@@ -4,6 +4,7 @@
 
 -- Let's make things foolproof...
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "¥", "<leader>")
 
 -- Show explorer
 vim.keymap.set("n", "<leader>=", vim.cmd.Ex)
