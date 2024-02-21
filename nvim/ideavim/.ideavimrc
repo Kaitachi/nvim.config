@@ -26,7 +26,7 @@ map Q gq
 """ --- My Mappings ---
 
 " IntelliJ Navigation
-map <leader>P <Action>(ManageRecentProjects)
+map <leader>: <Action>(ManageRecentProjects)
 map <c-z> <Action>(ActivateTerminalToolWindow)
 
 " Running our project
