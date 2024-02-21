@@ -66,5 +66,5 @@ local function searchForWikis()
 	return vim.api.nvim_call_function('systemlist', {command})
 end
 
-updateVimwikiList(searchForWikis())
+-- updateVimwikiList(searchForWikis())
 
