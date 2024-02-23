@@ -78,5 +78,5 @@ nmap <leader>B  <Action>(ToggleBookmark)
 " Or at the very least, try to detect if breakpoint is set (function)...
 
 " Plugins
-map <leader>l  <Action>(Gitlab.Copy.Link)
+nmap <leader>l  <Action>(Gitlab.Copy.Link)
 
