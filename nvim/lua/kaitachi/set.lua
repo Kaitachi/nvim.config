@@ -1,5 +1,6 @@
 vim.opt.number = true -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
+vim.opt.cursorline = true -- Highlight current cursor line
 
 -- Whitespace and indentations
 vim.opt.tabstop = 4
@@ -8,7 +9,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.list = true
-vim.opt.listchars = { tab = '▷ ', trail = '·', extends = '»', precedes = '«' , nbsp = '○', eol = '↵' }
+vim.opt.listchars = { tab = '▷ ', trail = '·', extends = '»', precedes = '«' , nbsp = '␣', eol = '↵' }
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
@@ -27,7 +28,8 @@ vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 
 -- Settings for vimwiki
 vim.cmd("set nocompatible")
