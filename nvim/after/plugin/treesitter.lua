@@ -3,7 +3,6 @@ require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
 		"c",
 		"go",
-		"help",
 		"html",
 		"json",
 		"lua",
@@ -11,6 +10,7 @@ require'nvim-treesitter.configs'.setup {
 		"query",
 		"svelte",
 		"vim",
+		"vimdoc",
 		"yaml"
 	},
 

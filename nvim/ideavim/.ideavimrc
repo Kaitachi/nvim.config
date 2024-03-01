@@ -52,7 +52,7 @@ map <c-=> <Action>(UnsplitAll)
 map gi <Action>(GotoImplementation)
 
 " Vim-like tab management
-map <c-m> <Action>(PinActiveEditorTab)
+map <leader>^ <Action>(PinActiveEditorTab)
 
 " Moving around current buffer
 map <leader>a <Action>(ShowIntentionActions)
@@ -78,5 +78,21 @@ nmap <leader>B  <Action>(ToggleBookmark)
 " Or at the very least, try to detect if breakpoint is set (function)...
 
 " Plugins
+
+" GiLab
 nmap <leader>l <Action>(Gitlab.Copy.Link)
+
+" Harpooner
+nmap <c-e> <Action>(HarpoonerQuickMenu)
+nmap <c-m> <Action>(HarpoonerAddFile)
+nmap <c-g>0 <Action>(HarpoonerOpenFile0)
+nmap <c-g>1 <Action>(HarpoonerOpenFile1)
+nmap <c-g>2 <Action>(HarpoonerOpenFile2)
+nmap <c-g>3 <Action>(HarpoonerOpenFile3)
+nmap <c-g>4 <Action>(HarpoonerOpenFile4)
+nmap <c-g>5 <Action>(HarpoonerOpenFile5)
+nmap <c-g>6 <Action>(HarpoonerOpenFile6)
+nmap <c-g>7 <Action>(HarpoonerOpenFile7)
+nmap <c-g>8 <Action>(HarpoonerOpenFile8)
+nmap <c-g>9 <Action>(HarpoonerOpenFile9)
 

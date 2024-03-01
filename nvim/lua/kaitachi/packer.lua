@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
 	use({'jaredgorski/SpaceCamp'})
 
 	-- Treesitter (code structure parsing)
-	use({'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }})
+	use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 	use({'nvim-treesitter/playground'})
 	use({'nvim-treesitter/nvim-treesitter-context'})
 
