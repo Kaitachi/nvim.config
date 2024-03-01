@@ -28,7 +28,9 @@ return require('packer').startup(function(use)
 	use({'terrortylor/nvim-comment'})
 
 	-- Harpoon (quick-access files)
-	use({'theprimeagen/harpoon'})
+	use({'theprimeagen/harpoon', branch = 'harpoon2',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	})
 
 	-- Undo Tree (git for undo/redo commands)
 	use({'mbbill/undotree'})

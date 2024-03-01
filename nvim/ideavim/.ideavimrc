@@ -84,7 +84,7 @@ nmap <leader>l <Action>(Gitlab.Copy.Link)
 
 " Harpooner
 nmap <c-e> <Action>(HarpoonerQuickMenu)
-nmap <c-m> <Action>(HarpoonerAddFile)
+nmap <c-a> <Action>(HarpoonerAddFile)
 nmap <c-g>0 <Action>(HarpoonerOpenFile0)
 nmap <c-g>1 <Action>(HarpoonerOpenFile1)
 nmap <c-g>2 <Action>(HarpoonerOpenFile2)
