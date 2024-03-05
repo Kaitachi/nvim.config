@@ -51,7 +51,6 @@ vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
 --vim.keymap.set("n", "<leader>t", "<cmd>exe 'tabn '.v:count1<CR>") -- use [count]\t to switch to corresponding tab
 
 -- Buffer management
-vim.keymap.set("n", "<leader>\\", "<cmd>exe 'b '.v:count<CR>") -- use [count]\b to switch to corresponding buffer
 vim.keymap.set("n", "<leader>-", vim.cmd.bd)
 vim.keymap.set("n", "<leader>[", vim.cmd.bp)
 vim.keymap.set("n", "<leader>]", vim.cmd.bn)

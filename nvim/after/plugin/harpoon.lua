@@ -4,9 +4,9 @@ local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
 
-vim.keymap.set("n", "<C-a>", function() harpoon:list():append() end)
+vim.keymap.set("n", "<C-s>", function() harpoon:list():append() end, { desc = "Add file to Harpoon list" })
 
-vim.keymap.set("n", "<C-g>", function() harpoon:list():select(vim.v.count1) end)
+vim.keymap.set("n", "<C-g>", function() harpoon:list():select(vim.v.count1) end, { desc = "Go to selected Harpoon file" })
 
 
 -- Telescope configuration
