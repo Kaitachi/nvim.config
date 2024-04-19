@@ -34,11 +34,12 @@ map <leader>e <Action>(Run)
 map <leader>d <Action>(Debug)
 map <leader>c <Action>(Coverage)
 map <leader>q <Action>(Stop)
-map <leader>s <Action>(editRunConfigurations)
+map <leader>s <Action>(RedesignedRunConfigurationSelector)
 " Last one doesn't seem to work...
 
 " Moving around different buffers/tabs
 map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>p <Action>(TogglePresentationMode)
 map <leader>[ <Action>(PreviousTab)
 map <leader>] <Action>(NextTab)
 map <leader>? <Action>(RecentFiles)
@@ -50,9 +51,11 @@ map <c-\> <Action>(SplitVertically)
 map <c--> <Action>(SplitHorizontally)
 map <c-=> <Action>(UnsplitAll)
 map gI <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
 
 " Vim-like tab management
 map <leader>^ <Action>(PinActiveEditorTab)
+map <leader>~ <Action>(MoveEditorToOppositeTabGroup)
 
 " Moving around current buffer
 map <leader>a <Action>(ShowIntentionActions)
@@ -80,7 +83,7 @@ nmap <leader>B  <Action>(ToggleBookmark)
 " Plugins
 
 " GiLab
-nmap <leader>l <Action>(Gitlab.Copy.Link)
+nmap <leader>l <Action>(GitLab.Copy.Link)
 
 " Harpooner
 nmap <c-e> <Action>(HarpoonerQuickMenu)
