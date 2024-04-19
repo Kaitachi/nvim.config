@@ -43,7 +43,8 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
   vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
 
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+  -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
   vim.keymap.set("n", "<leader>h", vim.lsp.buf.signature_help, opts)
@@ -58,6 +59,5 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
-require('lspconfig').tsserver.setup{}
-require('lspconfig').svelte.setup{}
-require('lspconfig').gopls.setup{}
+lsp.setup_servers({'gopls', 'tsserver', 'svelte'})
+

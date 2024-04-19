@@ -56,8 +56,8 @@ map <leader>^ <Action>(PinActiveEditorTab)
 
 " Moving around current buffer
 map <leader>a <Action>(ShowIntentionActions)
-map <leader>i <Action>(QuickJavaDoc)
-map <leader>o <Action>(FileStructurePopup)
+map <leader>S <Action>(FileStructurePopup)
+map K <Action>(QuickJavaDoc)
 map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
 map [l <Action>(GotoNextError)
