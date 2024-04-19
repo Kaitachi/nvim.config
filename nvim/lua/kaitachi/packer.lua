@@ -70,9 +70,6 @@ return require('packer').startup(function(use)
 	-- Golang Support
 	use({'ray-x/go.nvim'})
 
-	-- Vimwiki
-	-- use({'vimwiki/vimwiki'})
-
 	-- Vim motions practive
 	use({'theprimeagen/vim-be-good'})
 end)

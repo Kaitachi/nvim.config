@@ -37,16 +37,19 @@ lsp.on_attach(function(client, bufnr)
   -- See :help lsp-zero-keybindings
   local opts = {buffer = bufnr, remap = false}
 
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-  vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+  -- Diagnostic keymaps
   vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
   vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
+  vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+  vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
+
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
   vim.keymap.set("n", "<leader>h", vim.lsp.buf.signature_help, opts)
+  vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
+  vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
+  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
 end)
 
 lsp.setup()

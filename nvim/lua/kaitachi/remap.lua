@@ -43,17 +43,16 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Update file executable flag
 vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- Tab management
---vim.keymap.set("n", "<leader>a", vim.cmd.tabnew)
---vim.keymap.set("n", "<leader>x", vim.cmd.tabclose)
---vim.keymap.set("n", "<leader>h", vim.cmd.tabprevious)
---vim.keymap.set("n", "<leader>l", vim.cmd.tabnext)
---vim.keymap.set("n", "<leader>t", "<cmd>exe 'tabn '.v:count1<CR>") -- use [count]\t to switch to corresponding tab
-
 -- Buffer management
 vim.keymap.set("n", "<leader>-", vim.cmd.bd)
 vim.keymap.set("n", "<leader>[", vim.cmd.bp)
 vim.keymap.set("n", "<leader>]", vim.cmd.bn)
+
+-- Split management
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>");

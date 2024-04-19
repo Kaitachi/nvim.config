@@ -8,6 +8,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.autoindent = true
+vim.opt.breakindent = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '▷ ', trail = '·', extends = '»', precedes = '«' , nbsp = '␣', eol = '↵' }
 vim.opt.smartindent = true
@@ -22,6 +23,9 @@ vim.opt.undofile = true
 -- Searching
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.inccommand = "split"
 
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
@@ -30,6 +34,10 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
+
+-- Splits
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Settings for vimwiki
 vim.cmd("set nocompatible")

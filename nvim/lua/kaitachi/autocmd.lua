@@ -4,6 +4,7 @@ local cmd = require("kaitachi.command")
 -- Enable spelling on text files
 local au_ft = vim.api.nvim_create_augroup("ft", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
+	desc = "Enable spelling on text files",
 	pattern = "markdown,org,txt,tex",
 	group = au_ft,
 	callback = function()
@@ -17,6 +18,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- https://jeffkreeftmeijer.com/vim-number/#fnr.1
 local au_numbertoggle = vim.api.nvim_create_augroup("numbertoggle", { clear = true })
 vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave", "WinEnter"}, {
+	desc = "Toggle (on) relative numbers when leaving Insert mode",
 	pattern = "*",
 	group = au_numbertoggle,
 	callback = function()
@@ -25,6 +27,7 @@ vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave", "WinEnter
 })
 
 vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter", "WinLeave"}, {
+	desc = "Toggle (off) relative numbers when entering Insert mode",
 	pattern = "*",
 	group = au_numbertoggle,
 	callback = function()
@@ -32,12 +35,14 @@ vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter", "WinLeave"}
 	end
 })
 
-
--- Helper Functions
-function file_exists(name)
-	local r = io.popen(string.format(cmd.cmd.file_exists, name)):read()
-	if (r == "1") then return true else return false end
-end
+local au_hy = vim.api.nvim_create_augroup("hy", { clear = true })
+vim.api.nvim_create_autocmd({"TextYankPost"}, {
+	desc = "Highlight when yanking text",
+	group = au_hy,
+	callback = function()
+		vim.highlight.on_yank()
+	end
+})
 
 
 -- Because one cannot simply have it too easy sometimes...
