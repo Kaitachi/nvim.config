@@ -42,6 +42,8 @@ return require('packer').startup(function(use)
 	-- Good ol' bookmarks
 	use({'MattesGroeger/vim-bookmarks'})
 
+	use({'folke/todo-comments.nvim'})
+
 	-- Language Server Protocol
 	use({
 		'VonHeikemen/lsp-zero.nvim',
