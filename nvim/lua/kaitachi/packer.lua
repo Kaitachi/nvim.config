@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
 	-- Highlight todo, notes, etc
 	-- FIX: sample fixme string
 	-- TODO: sample todo string
-	-- WARNING: sample warning string
+	-- WARN: sample warn string
 	-- NOTE: sample note string
 	-- MARK: sample mark string
 	-- HACK: sample hack string
