@@ -9,9 +9,9 @@ comments.setup({
 -- So, apparently macOS does not support the color nomenclature used by todo-comments... =(
 if not vim.o.termguicolors then
 	-- Red
-	vim.cmd('hi TodoSignFIX ctermfg=Red')
-	vim.cmd('hi TodoFgFIX ctermfg=Red')
-	vim.cmd('hi TodoBgFIX ctermbg=Red ctermfg=White cterm=bold')
+	vim.cmd('hi TodoSignFIX ctermfg=DarkRed')
+	vim.cmd('hi TodoFgFIX ctermfg=DarkRed')
+	vim.cmd('hi TodoBgFIX ctermbg=DarkRed ctermfg=White cterm=bold')
 
 	-- Orange
 	vim.cmd('hi TodoSignTODO ctermfg=202')
@@ -19,14 +19,14 @@ if not vim.o.termguicolors then
 	vim.cmd('hi TodoBgTODO ctermbg=202 ctermfg=White cterm=bold')
 
 	-- Yellow
-	vim.cmd('hi TodoSignWARN ctermfg=Yellow')
-	vim.cmd('hi TodoFgWARN ctermfg=Yellow')
-	vim.cmd('hi TodoBgWARN ctermbg=Yellow ctermfg=Black cterm=bold')
+	vim.cmd('hi TodoSignWARN ctermfg=DarkYellow')
+	vim.cmd('hi TodoFgWARN ctermfg=DarkYellow')
+	vim.cmd('hi TodoBgWARN ctermbg=DarkYellow ctermfg=233 cterm=bold')
 
 	-- Green
-	vim.cmd('hi TodoSignNOTE ctermfg=Green')
-	vim.cmd('hi TodoFgNOTE ctermfg=Green')
-	vim.cmd('hi TodoBgNOTE ctermbg=Green ctermfg=White cterm=bold')
+	vim.cmd('hi TodoSignNOTE ctermfg=DarkGreen')
+	vim.cmd('hi TodoFgNOTE ctermfg=DarkGreen')
+	vim.cmd('hi TodoBgNOTE ctermbg=DarkGreen ctermfg=White cterm=bold')
 
 	-- Cyan
 	vim.cmd('hi TodoSignMARK ctermfg=Cyan')
