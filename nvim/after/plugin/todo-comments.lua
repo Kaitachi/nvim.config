@@ -7,7 +7,7 @@ comments.setup({
 })
 
 -- So, apparently macOS does not support the color nomenclature used by todo-comments... =(
-if vim.loop.os_uname().sysname == "Darwin" then
+if not vim.o.termguicolors then
 	-- Red
 	vim.cmd('hi TodoSignFIX ctermfg=Red')
 	vim.cmd('hi TodoFgFIX ctermfg=Red')
