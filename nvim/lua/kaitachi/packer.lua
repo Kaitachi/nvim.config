@@ -42,6 +42,15 @@ return require('packer').startup(function(use)
 	-- Good ol' bookmarks
 	use({'MattesGroeger/vim-bookmarks'})
 
+	-- Highlight todo, notes, etc
+	-- FIX: sample fixme string
+	-- TODO: sample todo string
+	-- WARNING: sample warning string
+	-- NOTE: sample note string
+	-- MARK: sample mark string
+	-- HACK: sample hack string
+	-- PERF: sample perf string
+	-- TEST: sample test string
 	use({'folke/todo-comments.nvim'})
 
 	-- Language Server Protocol
