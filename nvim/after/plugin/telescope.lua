@@ -1,4 +1,15 @@
+local telescope = require("telescope")
 local builtin = require('telescope.builtin')
+
+telescope.setup({
+	defaults = {
+		file_ignore_patterns = {
+			"node_modules",
+			"package%-lock.json",
+			".git"
+		}
+	}
+})
 
 -- Telescope Search
 vim.keymap.set('n', '<leader><leader>', builtin.builtin, {})
