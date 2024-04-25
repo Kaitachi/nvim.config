@@ -4,7 +4,7 @@ local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
 
-vim.keymap.set("n", "<C-s>", function() harpoon:list():append() end, { desc = "Add file to Harpoon list" })
+vim.keymap.set("n", "<C-s>", function() harpoon:list():add() end, { desc = "Add file to Harpoon list" })
 
 vim.keymap.set("n", "<C-g>", function() harpoon:list():select(vim.v.count1) end, { desc = "Go to selected Harpoon file" })
 
