@@ -61,3 +61,10 @@ vim.diagnostic.config({
 
 lsp.setup_servers({'gopls', 'tsserver', 'svelte'})
 
+-- Custom coloring for virtual text
+vim.cmd('hi DiagnosticVirtualTextError ctermbg=DarkRed ctermfg=White')
+vim.cmd('hi DiagnosticVirtualTextWarn ctermbg=DarkYellow ctermfg=White')
+vim.cmd('hi DiagnosticVirtualTextInfo ctermbg=DarkBlue ctermfg=White')
+vim.cmd('hi DiagnosticVirtualTextHint ctermbg=DarkGrey ctermfg=White')
+vim.cmd('hi DiagnosticVirtualTextOk ctermbg=DarkGreen ctermfg=White')
+
