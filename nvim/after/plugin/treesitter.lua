@@ -35,6 +35,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- nvim-treesitter-context
-vim.cmd('hi link TreesitterContext Conceal')
-vim.cmd('hi link TreesitterContextLineNumber Todo')
+vim.api.nvim_set_hl(0, "TreesitterContext", { ctermbg = 239 })
+vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { ctermbg = "White", ctermfg = "DarkGrey" })
 

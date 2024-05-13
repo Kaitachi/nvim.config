@@ -10,50 +10,50 @@ comments.setup({
 if not vim.o.termguicolors then
 	-- Red
 	-- FIX: sample fixme string
-	vim.cmd('hi TodoSignFIX ctermfg=DarkRed')
-	vim.cmd('hi TodoFgFIX ctermfg=DarkRed')
-	vim.cmd('hi TodoBgFIX ctermbg=DarkRed ctermfg=White cterm=bold')
+	vim.api.nvim_set_hl(0, "TodoSignFIX", { ctermfg = "DarkRed" })
+	vim.api.nvim_set_hl(0, "TodoFgFIX", { ctermfg = "DarkRed" })
+	vim.api.nvim_set_hl(0, "TodoBgFIX", { ctermbg = "DarkRed", ctermfg = "White", bold = true })
 
 	-- Orange
 	-- TODO: sample todo string
-	vim.cmd('hi TodoSignTODO ctermfg=202')
-	vim.cmd('hi TodoFgTODO ctermfg=202')
-	vim.cmd('hi TodoBgTODO ctermbg=202 ctermfg=White cterm=bold')
+	vim.api.nvim_set_hl(0, "TodoSignTODO", { ctermfg = 202 })
+	vim.api.nvim_set_hl(0, "TodoFgTODO", { ctermfg = 202 })
+	vim.api.nvim_set_hl(0, "TodoBgTODO", { ctermbg = 202, ctermfg = "White", bold = true })
 
 	-- Yellow
 	-- WARN: sample warn string
-	vim.cmd('hi TodoSignWARN ctermfg=DarkYellow')
-	vim.cmd('hi TodoFgWARN ctermfg=DarkYellow')
-	vim.cmd('hi TodoBgWARN ctermbg=DarkYellow ctermfg=233 cterm=bold')
+	vim.api.nvim_set_hl(0, "TodoSignWARN", { ctermfg = "DarkYellow" })
+	vim.api.nvim_set_hl(0, "TodoFgWARN", { ctermfg = "DarkYellow" })
+	vim.api.nvim_set_hl(0, "TodoBgWARN", { ctermbg = "DarkYellow", ctermfg = "White", bold = true })
 
 	-- Green
 	-- NOTE: sample note string
-	vim.cmd('hi TodoSignNOTE ctermfg=DarkGreen')
-	vim.cmd('hi TodoFgNOTE ctermfg=DarkGreen')
-	vim.cmd('hi TodoBgNOTE ctermbg=DarkGreen ctermfg=White cterm=bold')
+	vim.api.nvim_set_hl(0, "TodoSignNOTE", { ctermfg = "DarkGreen" })
+	vim.api.nvim_set_hl(0, "TodoFgNOTE", { ctermfg = "DarkGreen" })
+	vim.api.nvim_set_hl(0, "TodoBgNOTE", { ctermbg = "DarkGreen", ctermfg = "White", bold = true })
 
 	-- Cyan
 	-- MARK: sample mark string
-	vim.cmd('hi TodoSignMARK ctermfg=Cyan')
-	vim.cmd('hi TodoFgMARK ctermfg=Cyan')
-	vim.cmd('hi TodoBgMARK ctermbg=Cyan ctermfg=White cterm=bold')
+	vim.api.nvim_set_hl(0, "TodoSignMARK", { ctermfg = "Cyan" })
+	vim.api.nvim_set_hl(0, "TodoFgMARK", { ctermfg = "Cyan" })
+	vim.api.nvim_set_hl(0, "TodoBgMARK", { ctermbg = "Cyan", ctermfg = "White", bold = true })
 
 	-- Blue
 	-- HACK: sample hack string
-	vim.cmd('hi TodoSignHACK ctermfg=DarkBlue')
-	vim.cmd('hi TodoFgHACK ctermfg=DarkBlue')
-	vim.cmd('hi TodoBgHACK ctermbg=DarkBlue ctermfg=White cterm=bold')
+	vim.api.nvim_set_hl(0, "TodoSignHACK", { ctermfg = "DarkBlue" })
+	vim.api.nvim_set_hl(0, "TodoFgHACK", { ctermfg = "DarkBlue" })
+	vim.api.nvim_set_hl(0, "TodoBgHACK", { ctermbg = "DarkBlue", ctermfg = "White", bold = true })
 
 	-- Violet
 	-- PERF: sample perf string
-	vim.cmd('hi TodoSignPERF ctermfg=53')
-	vim.cmd('hi TodoFgPERF ctermfg=53')
-	vim.cmd('hi TodoBgPERF ctermbg=53 ctermfg=White cterm=bold')
+	vim.api.nvim_set_hl(0, "TodoSignPERF", { ctermfg = 53 })
+	vim.api.nvim_set_hl(0, "TodoFgPERF", { ctermfg = 53 })
+	vim.api.nvim_set_hl(0, "TodoBgPERF", { ctermbg = 53, ctermfg = "White", bold = true })
 
 	-- Brown
 	-- TEST: sample test string
-	vim.cmd('hi TodoSignTEST ctermfg=Brown')
-	vim.cmd('hi TodoFgTEST ctermfg=Brown')
-	vim.cmd('hi TodoBgTEST ctermbg=Brown ctermfg=White cterm=bold')
+	vim.api.nvim_set_hl(0, "TodoSignTEST", { ctermfg = "Brown" })
+	vim.api.nvim_set_hl(0, "TodoFgTEST", { ctermfg = "Brown" })
+	vim.api.nvim_set_hl(0, "TodoBgTEST", { ctermbg = "Brown", ctermfg = "White", bold = true })
 end
 
