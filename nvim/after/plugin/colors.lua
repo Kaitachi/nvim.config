@@ -13,6 +13,9 @@ function ColorMyPencils(color)
 	-- Distinctive EOB
 	vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none", ctermfg = 202 })
 
+	-- Visual
+	vim.api.nvim_set_hl(0, "Visual", { ctermbg = 24, ctermfg = 231 })
+
 	vim.cmd.AirlineTheme("tomorrow")
 end
 
