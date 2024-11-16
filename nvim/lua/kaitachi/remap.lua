@@ -4,7 +4,15 @@
 
 -- Let's make things foolproof...
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<PageUp>", "<nop>")
+vim.keymap.set("n", "<PageDown>", "<nop>")
 vim.keymap.set("n", "¥", "<leader>")
+
+vim.keymap.set("i", "<PageUp>", "<nop>")
+vim.keymap.set("i", "<PageDown>", "<nop>")
+
+vim.keymap.set("v", "<PageUp>", "<nop>")
+vim.keymap.set("v", "<PageDown>", "<nop>")
 
 -- Show explorer
 vim.keymap.set("n", "<leader>=", vim.cmd.Ex)

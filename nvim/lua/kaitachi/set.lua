@@ -9,7 +9,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.breakindent = true
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = { tab = '▷ ', trail = '·', extends = '»', precedes = '«' , nbsp = '␣', eol = '↵' }
 vim.opt.smartindent = true
 vim.opt.wrap = false
