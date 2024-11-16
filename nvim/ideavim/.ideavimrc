@@ -50,7 +50,7 @@ map <c-p> <Action>(PrevSplitter)
 map <c-\> <Action>(SplitVertically)
 map <c--> <Action>(SplitHorizontally)
 map <c-=> <Action>(UnsplitAll)
-map gI <Action>(GotoImplementation)
+map gi <Action>(GotoImplementation)
 map gd <Action>(GotoDeclaration)
 
 " Vim-like tab management

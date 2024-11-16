@@ -17,10 +17,10 @@ vim.keymap.set('n', '<leader>P', builtin.planets, {})
 
 -- Vim Search
 vim.keymap.set('n', '<leader>H', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>K', builtin.keymaps, {})
-vim.keymap.set('n', '<leader>C', builtin.commands, {})
-vim.keymap.set('n', '<leader>B', builtin.buffers, {})
-vim.keymap.set('n', '<leader>R', builtin.registers, {})
+vim.keymap.set('n', '<c-bslash><c-k>', builtin.keymaps, {})
+vim.keymap.set('n', '<c-bslash><c-c>', builtin.commands, {})
+vim.keymap.set('n', '<c-bslash><c-b>', builtin.buffers, {})
+vim.keymap.set('n', '<c-bslash><c-r>', builtin.registers, {})
 
 -- File Search
 vim.keymap.set('n', '<leader>g', builtin.git_files, {})
@@ -34,7 +34,7 @@ vim.keymap.set('n', '<leader>M', builtin.marks, {})
 -- LSP
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
-vim.keymap.set('n', 'gI', builtin.lsp_implementations, {})
+vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
 vim.keymap.set('n', '<leader>D', builtin.lsp_type_definitions, {})
 vim.keymap.set('n', '<leader>S', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<leader>W', builtin.lsp_dynamic_workspace_symbols, {})
