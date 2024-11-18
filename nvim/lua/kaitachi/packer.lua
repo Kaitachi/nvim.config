@@ -82,6 +82,15 @@ return require('packer').startup(function(use)
 		}
 	})
 
+	-- dadbod - SQL Queries
+	use({
+		'tpope/vim-dadbod',
+		requires = {
+			{'kristijanhusak/vim-dadbod-completion'},
+			{'kristijanhusak/vim-dadbod-ui'},
+		}
+	})
+
 	-- Golang Support
 	use({'ray-x/go.nvim'})
 
