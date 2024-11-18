@@ -70,6 +70,18 @@ return require('packer').startup(function(use)
 		}
 	})
 
+	-- dap - Debugger
+	use({
+		'mfussenegger/nvim-dap',
+		requires = {
+			{'rcarriga/nvim-dap-ui'},
+			{'nvim-neotest/nvim-nio'},
+
+			-- Preconfigured Debuggers
+			{'leoluz/nvim-dap-go'},
+		}
+	})
+
 	-- Golang Support
 	use({'ray-x/go.nvim'})
 
