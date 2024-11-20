@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- Merge current and next line
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("v", "<C-bslash><C-j>", "mzJ`z")
 
 -- Move text while in Visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
