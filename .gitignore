@@ -14,3 +14,9 @@ nvim/plugin/
 nvim/spell/
 nvim/templates/
 
+#######################################
+# ...also don't ignore these places
+#######################################
+
+!term/
+
