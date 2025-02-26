@@ -14,9 +14,8 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	})
 
-	-- Color Schemes
-	use({'vim-airline/vim-airline'})
-	use({'vim-airline/vim-airline-themes'})
+	-- Color Schemes / UI
+	use({'itchyny/lightline.vim'})
 	use({'jaredgorski/SpaceCamp'})
 
 	-- Treesitter (code structure parsing)

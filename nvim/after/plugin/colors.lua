@@ -1,4 +1,9 @@
 function ColorMyPencils(color)
+	-- Set color scheme for lightline
+	vim.g["lightline"] = {
+		colorscheme = 'OldHope'
+	}
+
 	-- Use `:echo g:colors_name` to show current color scheme
 	color = color or "spacecamp"
 	vim.cmd.colorscheme(color)
@@ -15,8 +20,6 @@ function ColorMyPencils(color)
 
 	-- Visual
 	--vim.api.nvim_set_hl(0, "Visual", { ctermbg = 24, ctermfg = 231 })
-
-	vim.cmd.AirlineTheme("tomorrow")
 end
 
 ColorMyPencils()
