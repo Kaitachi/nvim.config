@@ -62,9 +62,9 @@ vim.diagnostic.config({
 lsp.setup_servers({'gopls', 'tsserver', 'svelte'})
 
 -- Custom coloring for virtual text
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { ctermbg = "DarkRed", ctermfg = "White" })
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { ctermbg = "DarkYellow", ctermfg = "White" })
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { ctermbg = "DarkBlue", ctermfg = "White" })
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { ctermbg = "DarkGrey", ctermfg = "White" })
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextOk", { ctermbg = "DarkGreen", ctermfg = "White" })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { ctermbg = "DarkRed", ctermfg = "White", italic = true })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { ctermbg = "DarkYellow", ctermfg = "White", italic = true })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { ctermbg = "DarkBlue", ctermfg = "White", italic = true })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { ctermbg = "DarkGrey", ctermfg = "White", italic = true })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextOk", { ctermbg = "DarkGreen", ctermfg = "White", italic = true })
 
