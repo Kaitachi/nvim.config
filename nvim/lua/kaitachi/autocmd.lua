@@ -35,6 +35,25 @@ vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter", "WinLeave"}
 	end
 })
 
+local au_diagnostictoggle = vim.api.nvim_create_augroup("diagnostictoggle", { clear = true })
+vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave", "WinEnter"}, {
+	desc = "Toggle (on) diagnostic virtual text when leaving Insert mode",
+	pattern = "*",
+	group = au_diagnostictoggle,
+	callback = function()
+		vim.diagnostic.config({ virtual_text = true })
+	end
+})
+
+vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter", "WinLeave"}, {
+	desc = "Toggle (off) diagnostic virtual text when entering Insert mode",
+	pattern = "*",
+	group = au_diagnostictoggle,
+	callback = function()
+		vim.diagnostic.config({ virtual_text = false })
+	end
+})
+
 local au_hy = vim.api.nvim_create_augroup("hy", { clear = true })
 vim.api.nvim_create_autocmd({"TextYankPost"}, {
 	desc = "Highlight when yanking text",
@@ -46,4 +65,5 @@ vim.api.nvim_create_autocmd({"TextYankPost"}, {
 
 
 -- Because one cannot simply have it too easy sometimes...
+vim.api.nvim_create_user_command("Q", "q", {})
 vim.api.nvim_create_user_command("W", "w", {})
