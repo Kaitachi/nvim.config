@@ -11,6 +11,8 @@ telescope.setup({
 	}
 })
 
+telescope.load_extension('harpoon')
+
 -- Telescope Search
 vim.keymap.set('n', '<leader><leader>', builtin.builtin, {})
 vim.keymap.set('n', '<leader>P', builtin.planets, {})
