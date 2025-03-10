@@ -38,3 +38,6 @@ require'nvim-treesitter.configs'.setup {
 vim.api.nvim_set_hl(0, "TreesitterContext", { ctermbg = 239 })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { ctermbg = "White", ctermfg = "DarkGrey" })
 
+-- Remove TODO highlights (using another plugin for this)
+vim.api.nvim_set_hl(0, "@comment.todo.comment", { link = "TodoBgTODO" })
+
