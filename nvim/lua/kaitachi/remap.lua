@@ -27,13 +27,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Greatest remap ever
+-- Greatest remap ever (copy to clipboard)
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- Next greatest remap ever : asbjornHaland
+-- Next greatest remap ever (copy selection to clipboard) : asbjornHaland
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- Merge current and next line
 vim.keymap.set("v", "<C-bslash><C-j>", "mzJ`z")
@@ -58,12 +57,13 @@ vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>-", vim.cmd.bd)
 vim.keymap.set("n", "<leader>[", vim.cmd.bp)
 vim.keymap.set("n", "<leader>]", vim.cmd.bn)
+vim.keymap.set("n", "<BS>", "<C-o>")
 
 -- Split management
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
+-- vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
+-- vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
+-- vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
+-- vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>")
