@@ -26,9 +26,9 @@ vim.keymap.set('n', '<c-bslash><c-r>', builtin.registers, {})
 
 -- File Search
 vim.keymap.set('n', '<leader>g', builtin.git_files, {})
-vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files hidden=true<CR>')
+vim.keymap.set('n', '<leader>=', '<cmd>Telescope find_files hidden=true<CR>')
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, {})
-vim.keymap.set('n', '<leader>/', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
 
 -- Buffer Search
 vim.keymap.set('n', '<leader>M', builtin.marks, {})

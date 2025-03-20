@@ -15,7 +15,7 @@ vim.keymap.set("v", "<PageUp>", "<nop>")
 vim.keymap.set("v", "<PageDown>", "<nop>")
 
 -- Show explorer
-vim.keymap.set("n", "<leader>=", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>+", vim.cmd.Ex)
 
 -- Navigation
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

@@ -4,8 +4,11 @@ function ColorMyPencils(color)
 		colorscheme = 'OldHope'
 	}
 
+	-- Set color scheme options
+	vim.g["edge_style"] = 'neon'
+
 	-- Use `:echo g:colors_name` to show current color scheme
-	color = color or "spacecamp"
+	color = color or "edge"
 	vim.cmd.colorscheme(color)
 
 	-- Show text without background colors

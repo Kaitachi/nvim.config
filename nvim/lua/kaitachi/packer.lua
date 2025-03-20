@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
 
 	-- Color Schemes / UI
 	use({'itchyny/lightline.vim'})
-	use({'jaredgorski/SpaceCamp'})
+	use({'sainnhe/edge'})
 
 	-- Treesitter (code structure parsing)
 	use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
