@@ -46,9 +46,8 @@ vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
 
 -- Highlight settings
-if not vim.fn.has("macunix") then
-	-- macOS isn't good at handling termguicolors...
-	-- let's apply them everywhere else!
+if not vim.fn.has("termguicolors") then
+	-- Apply termguicolors if available
 	vim.opt.termguicolors = true
 end
 
