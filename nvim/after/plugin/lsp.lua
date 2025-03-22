@@ -64,16 +64,17 @@ vim.diagnostic.config({
 
 lsp.setup_servers({"gopls", "tsserver", "svelte"})
 
-lsp.ts_ls.setup({
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-	init_options = {
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = npm_path .. "lib/node_modules/@vue/language-server",
-				language = { "vue" },
-			}
+if lsp.ts_ls ~= nil then
+	lsp.ts_ls.setup({
+		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+		init_options = {
+			plugins = {
+				{
+					name = "@vue/typescript-plugin",
+					location = npm_path .. "lib/node_modules/@vue/language-server",
+					language = { "vue" },
+				}
+			},
 		},
-	},
-})
-
+	})
+end
