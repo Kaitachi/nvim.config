@@ -1,4 +1,7 @@
 local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
+
+local npm_path = vim.fn.system { 'which', 'npm' }:gsub("bin/npm\n", "")
 
 lsp.preset("recommended")
 
@@ -59,5 +62,18 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
-lsp.setup_servers({'gopls', 'tsserver', 'svelte'})
+lsp.setup_servers({"gopls", "tsserver", "svelte"})
+
+lsp.ts_ls.setup({
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+	init_options = {
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = npm_path .. "lib/node_modules/@vue/language-server",
+				language = { "vue" },
+			}
+		},
+	},
+})
 
