@@ -4,12 +4,17 @@ comments.setup({
 	keywords = {
 		MARK = { icon = "󱋜", color = "error", signs = true },
 	},
+	highlight = {
+		before = "fg",
+		-- TODO: Case-insensitive keyword search
+		-- pattern = [[\c.*<(KEYWORDS)\s*:]],
+	},
 })
 
 -- So, apparently macOS does not support the color nomenclature used by todo-comments... =(
-if not vim.o.termguicolors then
+if vim.fn.has("macunix") == 1 then
 	-- Red
-	-- FIX: sample fixme string
+	-- FIX: sample fix string
 	vim.api.nvim_set_hl(0, "TodoSignFIX", { ctermfg = "DarkRed" })
 	vim.api.nvim_set_hl(0, "TodoFgFIX", { ctermfg = "DarkRed" })
 	vim.api.nvim_set_hl(0, "TodoBgFIX", { ctermbg = "DarkRed", ctermfg = "White", bold = true })
@@ -55,5 +60,7 @@ if not vim.o.termguicolors then
 	vim.api.nvim_set_hl(0, "TodoSignTEST", { ctermfg = "Brown" })
 	vim.api.nvim_set_hl(0, "TodoFgTEST", { ctermfg = "Brown" })
 	vim.api.nvim_set_hl(0, "TodoBgTEST", { ctermbg = "Brown", ctermfg = "White", bold = true })
+else
+	-- TODO: Redefine colors for gui
 end
 

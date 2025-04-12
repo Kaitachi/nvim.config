@@ -6,6 +6,7 @@ Environment Variables
 
 
 # Git Customizations
+* `git config --global status.showUntrackedFiles all`
 * `git config --global alias.graph "log --graph --pretty=oneline"`
 * `git config --global alias.l "log --graph --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset) %C(auto)%d%C(reset)' --abbrev-commit --date=relative"`
 * `git config --global alias.ll "log --graph --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset) %C(auto)%d%C(reset)' --abbrev-commit --date=relative --all"`
