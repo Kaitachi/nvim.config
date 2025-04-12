@@ -59,6 +59,10 @@ function ColorMyPencils(color)
 	for _, v in pairs(highlight_lightline_errors) do
 		vim.api.nvim_set_hl(0, v, { link = "VirtualTextError" })
 	end
+
+	-- Custom colors for lightline terminal mode
+	vim.api.nvim_set_hl(0, "LightlineLeft_terminal_0", { ctermbg = 232, bg = "black" })
+	vim.api.nvim_set_hl(0, "LightlineRight_terminal_0", { ctermbg = 232, bg = "black" })
 end
 
 ColorMyPencils()
