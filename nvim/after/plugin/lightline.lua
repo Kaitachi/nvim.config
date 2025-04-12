@@ -14,6 +14,7 @@ function! LightlineGitDetachedHead()
 endfunction
 ]], false)
 
+-- FIXME: Currently not using this object!!!
 return {
 	colorscheme = 'custom',
 	active = {
