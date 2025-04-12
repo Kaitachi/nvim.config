@@ -15,7 +15,7 @@ endfunction
 ]], false)
 
 return {
-	colorscheme = 'OldHope',
+	colorscheme = 'custom',
 	active = {
 		left = {
 			{ 'mode', 'paste' },

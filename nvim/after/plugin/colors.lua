@@ -1,6 +1,25 @@
 function ColorMyPencils(color)
+	-- TODO: Wish this would exist elsewhere...
 	-- Set lightline options
-	vim.g["lightline"] = require("after.plugin.lightline")
+	vim.g["lightline"] = {
+		colorscheme = 'custom',
+		active = {
+			left = {
+				{ 'mode', 'paste' },
+				{ 'gitdetachedhead', 'gitbranch' },
+				{ 'readonly', 'relativepath', 'modified' }
+			},
+		},
+		component_function = {
+			gitbranch = 'FugitiveHead'
+		},
+		component_expand = {
+			gitdetachedhead = 'LightlineGitDetachedHead'
+		},
+		component_type = {
+			gitdetachedhead = 'error'
+		},
+	}
 
 	-- Set color scheme options
 	vim.g["edge_style"] = 'neon'
@@ -42,27 +61,6 @@ function ColorMyPencils(color)
 		end
 		vim.api.nvim_set_hl(0, v, hl_diag)
 	end
-
-
-	-- Custom colors for lightline errors
-	local highlight_lightline_errors = {
-		"LightlineLeft_normal_error",
-		"LightlineLeft_insert_error",
-		"LightlineLeft_replace_error",
-		"LightlineLeft_visual_error",
-		"LightlineLeft_command_error",
-		"LightlineLeft_inactive_error",
-		"LightlineLeft_select_error",
-		"LightlineLeft_terminal_error",
-	}
-
-	for _, v in pairs(highlight_lightline_errors) do
-		vim.api.nvim_set_hl(0, v, { link = "VirtualTextError" })
-	end
-
-	-- Custom colors for lightline terminal mode
-	vim.api.nvim_set_hl(0, "LightlineLeft_terminal_0", { ctermbg = 232, bg = "black" })
-	vim.api.nvim_set_hl(0, "LightlineRight_terminal_0", { ctermbg = 232, bg = "black" })
 end
 
 ColorMyPencils()
