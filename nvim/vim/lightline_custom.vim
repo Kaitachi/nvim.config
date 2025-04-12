@@ -31,7 +31,7 @@ let s:p.insert.left = [ [ s:white, s:green ], [ s:white, s:gray ] ]
 let s:p.visual.left = [ [ s:white, s:orange ], [ s:white, s:gray ] ]
 let s:p.replace.left = [ [ s:white, s:red ], [ s:white, s:gray ] ]
 let s:p.terminal.left = [ [ s:white, s:black ], [ s:white, s:gray ] ]
-let s:p.command.left = [ [ s:darkestCyan, s:mediumCyan ], [ s:mediumCyan, s:darkBlue ], [ s:mediumCyan, s:darkestBlue ] ]
+let s:p.command.left = [ [ s:darkestCyan, s:white, 'bold' ], [ s:white, s:darkBlue ] ]
 
 let s:p.inactive.right = [ [ s:darkGray, s:gray ], [ s:darkGray, s:gray ] ]
 let s:p.inactive.left = [ [ s:lightGray, s:darkGray ], [ s:white, s:darkGray ] ]
@@ -52,7 +52,7 @@ let s:p.insert.right = copy(s:p.insert.left)
 let s:p.visual.right = copy(s:p.visual.left)
 let s:p.replace.right = copy(s:p.replace.left)
 let s:p.terminal.right = copy(s:p.terminal.left)
-let s:p.command.right = copy(s:p.command.left)
+let s:p.command.right = [ [ s:darkestCyan, s:mediumCyan ], [ s:mediumCyan, s:darkBlue ], [ s:mediumCyan, s:darkestBlue ] ]
 let s:p.tabline.right = copy(s:p.tabline.left)
 
 let g:lightline#colorscheme#custom#palette = lightline#colorscheme#flatten(s:p)
