@@ -11,7 +11,7 @@ function ColorMyPencils(color)
 			},
 		},
 		component_function = {
-			gitbranch = 'FugitiveHead'
+			gitbranch = 'LightlineGitCurrentBranch'
 		},
 		component_expand = {
 			gitdetachedhead = 'LightlineGitDetachedHead'

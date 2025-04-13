@@ -14,6 +14,22 @@ function! LightlineGitDetachedHead()
 endfunction
 ]], false)
 
+-- Set lightline current branch name (remove parent folders from branch name)
+vim.api.nvim_exec([[
+function! LightlineGitCurrentBranch()
+	if exists("*FugitiveHead")
+		if empty(FugitiveHead())
+			return ""
+		elseif match(FugitiveHead(), "/") < 0
+			return FugitiveHead()
+		else
+			return "…" . matchstr(FugitiveHead(), '/[^/]*$')
+	endif
+
+	return ""
+endfunction
+]], false)
+
 -- FIXME: Currently not using this object!!!
 return {
 	colorscheme = 'custom',
@@ -25,7 +41,7 @@ return {
 		},
 	},
 	component_function = {
-		gitbranch = 'FugitiveHead'
+		gitbranch = 'LightlineGitCurrentBranch'
 	},
 	component_expand = {
 		gitdetachedhead = 'LightlineGitDetachedHead'
