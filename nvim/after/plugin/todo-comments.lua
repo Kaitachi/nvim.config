@@ -5,7 +5,6 @@ comments.setup({
 		MARK = { icon = "󱋜", color = "error", signs = true },
 	},
 	highlight = {
-		before = "fg",
 		-- TODO: Case-insensitive keyword search
 		-- pattern = [[\c.*<(KEYWORDS)\s*:]],
 	},
