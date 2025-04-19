@@ -30,6 +30,13 @@ function! LightlineGitCurrentBranch()
 endfunction
 ]], false)
 
+-- Set lightline current file path (relative to nvim's cwd)
+vim.api.nvim_exec([[
+function! LightlineCurrentRelativePath()
+	return expand('%:.')
+endfunction
+]], false)
+
 -- FIXME: Currently not using this object!!!
 return {
 	colorscheme = 'custom',
@@ -37,11 +44,12 @@ return {
 		left = {
 			{ 'mode', 'paste' },
 			{ 'gitdetachedhead', 'gitbranch' },
-			{ 'readonly', 'relativepath', 'modified' }
+			{ 'readonly', 'relpath', 'modified' }
 		},
 	},
 	component_function = {
-		gitbranch = 'LightlineGitCurrentBranch'
+		gitbranch = 'LightlineGitCurrentBranch',
+		relpath = 'LightlineCurrentRelativePath'
 	},
 	component_expand = {
 		gitdetachedhead = 'LightlineGitDetachedHead'

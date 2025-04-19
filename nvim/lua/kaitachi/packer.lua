@@ -17,32 +17,27 @@ return require('packer').startup(function(use)
 	-- Color Schemes / UI
 	use({'itchyny/lightline.vim'})
 	use({'sainnhe/edge'})
+	use({'folke/todo-comments.nvim'})
 
 	-- Treesitter (code structure parsing)
 	use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 	use({'nvim-treesitter/playground'})
 	use({'nvim-treesitter/nvim-treesitter-context'})
 
-	-- Code utilities
-	use({'terrortylor/nvim-comment'})
-
 	-- Harpoon (quick-access files)
 	use({'theprimeagen/harpoon', branch = 'harpoon2',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	})
 
-	-- Undo Tree (git for undo/redo commands)
-	use({'mbbill/undotree'})
-
 	-- Vim Git (Git for Vim)
 	use({'tpope/vim-fugitive'})
 	use({'lewis6991/gitsigns.nvim'})
 
-	-- Good ol' bookmarks
-	use({'MattesGroeger/vim-bookmarks'})
-
-	-- Highlight todo, notes, etc
-	use({'folke/todo-comments.nvim'})
+	-- Vim enhancements
+	use({'mbbill/undotree'}) -- Git for undo/redo commands
+	use({'MattesGroeger/vim-bookmarks'}) -- Good ol' bookmarks
+	use({'terrortylor/nvim-comment'}) -- Comment/uncomment code
+	use({'stevearc/overseer.nvim'}) -- Terminal within nvim
 
 	-- Language Server Protocol
 	use({
@@ -76,7 +71,7 @@ return require('packer').startup(function(use)
 			{'rcarriga/nvim-dap-ui'},
 			{'nvim-neotest/nvim-nio'},
 
-			-- Preconfigured Debuggers
+			-- Pre-configured Debuggers
 			{'leoluz/nvim-dap-go'},
 		}
 	})
@@ -93,6 +88,6 @@ return require('packer').startup(function(use)
 	-- Golang Support
 	use({'ray-x/go.nvim'})
 
-	-- Vim motions practive
+	-- Vim motions practice
 	use({'theprimeagen/vim-be-good'})
 end)

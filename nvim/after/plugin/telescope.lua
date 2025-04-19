@@ -30,7 +30,6 @@ vim.keymap.set('n', '+', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
 
 -- Git Commands
-vim.keymap.set('n', '<leader>g', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 
 -- Buffer Search

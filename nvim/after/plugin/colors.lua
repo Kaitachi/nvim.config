@@ -7,11 +7,12 @@ function ColorMyPencils(color)
 			left = {
 				{ 'mode', 'paste' },
 				{ 'gitdetachedhead', 'gitbranch' },
-				{ 'readonly', 'relativepath', 'modified' }
+				{ 'readonly', 'relpath', 'modified' }
 			},
 		},
 		component_function = {
-			gitbranch = 'LightlineGitCurrentBranch'
+			gitbranch = 'LightlineGitCurrentBranch',
+			relpath = 'LightlineCurrentRelativePath'
 		},
 		component_expand = {
 			gitdetachedhead = 'LightlineGitDetachedHead'
