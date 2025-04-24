@@ -1,4 +1,5 @@
 -- HINT: Show current mappings with :nmap :vmap :imap
+local qf = require("kaitachi.qflist")
 
 -- vim.g.mapleader = " "
 
@@ -18,10 +19,6 @@ vim.keymap.set("v", "<PageDown>", "<nop>")
 vim.keymap.set("n", "<leader>+", vim.cmd.Ex)
 
 -- Navigation
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
@@ -31,7 +28,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Next greatest remap ever (copy selection to clipboard) : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Merge current and next line
@@ -59,12 +56,10 @@ vim.keymap.set("n", "<leader>[", vim.cmd.bp)
 vim.keymap.set("n", "<leader>]", vim.cmd.bn)
 vim.keymap.set("n", "<BS>", "<C-o>")
 
--- Split management
--- vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
--- vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
--- vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
--- vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
+-- Quickfix management
+vim.keymap.set("n", "<C-up>", vim.cmd.cprevious)
+vim.keymap.set("n", "<C-down>", vim.cmd.cnext)
+vim.keymap.set("n", "<leader>q", function() qf.toggle_qf "q" end)
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>")
-

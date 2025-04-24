@@ -1,6 +1,3 @@
-local cmd = require("kaitachi.command")
-
-
 -- Enable spelling on text files
 local au_ft = vim.api.nvim_create_augroup("ft", { clear = true })
 vim.api.nvim_create_autocmd({"FileType"}, {
