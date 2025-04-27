@@ -11,7 +11,7 @@ function GitToggle()
 	end
 end
 
-vim.keymap.set("n", "<F9>", GitToggle, { desc = "Toggle Git Status" })
+vim.keymap.set("n", "<F10>", GitToggle, { desc = "Toggle Git Status" })
 
 vim.opt.updatetime = 100
 
