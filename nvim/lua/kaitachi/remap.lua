@@ -5,15 +5,9 @@ local qf = require("kaitachi.qflist")
 
 -- Let's make things foolproof...
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<PageUp>", "<nop>")
-vim.keymap.set("n", "<PageDown>", "<nop>")
 vim.keymap.set("n", "¥", "<leader>")
-
-vim.keymap.set("i", "<PageUp>", "<nop>")
-vim.keymap.set("i", "<PageDown>", "<nop>")
-
-vim.keymap.set("v", "<PageUp>", "<nop>")
-vim.keymap.set("v", "<PageDown>", "<nop>")
+vim.keymap.set({ "n", "i", "v" }, "<PageUp>", "<nop>")
+vim.keymap.set({ "n", "i", "v" }, "<PageDown>", "<nop>")
 
 -- Show explorer
 vim.keymap.set("n", "<leader>+", vim.cmd.Ex)
@@ -57,9 +51,9 @@ vim.keymap.set("n", "<leader>]", vim.cmd.bn)
 vim.keymap.set("n", "<BS>", "<C-o>")
 
 -- Quickfix management
-vim.keymap.set("n", "<C-up>", vim.cmd.cprevious)
-vim.keymap.set("n", "<C-down>", vim.cmd.cnext)
-vim.keymap.set("n", "<leader>q", function() qf.toggle_qf "q" end)
+vim.keymap.set("n", "<S-up>", vim.cmd.cprevious)
+vim.keymap.set("n", "<S-down>", vim.cmd.cnext)
+vim.keymap.set("n", "<F9>", function() qf.toggle_qf "q" end)
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>")

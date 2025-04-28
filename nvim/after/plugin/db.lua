@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<F18>", "<cmd>DBUIToggle<cr>", { desc = "Toggle DBUI" })
+vim.keymap.set("n", "<F17>", "<cmd>DBUIToggle<cr>", { desc = "Toggle DBUI" })

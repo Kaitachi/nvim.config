@@ -16,3 +16,12 @@ Environment Variables
 * `git update-index --assume-unchanged <path/to/file>` - Make Git ignore files (different from `.gitignore`)
 * `git ls-files -v | grep -e "^[hsmrck]"` - Show files ignored using the command above
 
+# Using macOS Terminal
+For some reason, some keystrokes related to arrow keys are not properly sent by the terminal (i.e. <S-up>...). To properly set these, go to Preferences -> Profiles -> Keyboard and add the following actions:
+
+| Key        | Action     |
+|------------|------------|
+| Shift-Up   | <C-[>[1;2A |
+| Shift-Down | <C-[>[1;2B |
+| Ctrl-Up    | <C-[>[1;5A |
+| Ctrl-Down  | <C-[>[1;5B |
