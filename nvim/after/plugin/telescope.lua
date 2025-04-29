@@ -35,7 +35,7 @@ vim.keymap.set('n', '+', builtin.oldfiles, { desc = "Telescope fuzzy-find recent
 vim.keymap.set('n', '<leader>f', builtin.live_grep, { desc = "Telescope fuzzy-find text" })
 
 -- Git Commands
-vim.keymap.set('n', '<F15>', function() builtin.git_branches {
+vim.keymap.set('n', '<F12>', function() builtin.git_branches {
 	layout_strategy = "vertical"
 } end, { desc = "Telescope show Git branches" })
 

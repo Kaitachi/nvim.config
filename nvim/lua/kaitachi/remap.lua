@@ -53,7 +53,7 @@ vim.keymap.set("n", "<BS>", "<C-o>")
 -- Quickfix management
 vim.keymap.set("n", "<S-up>", vim.cmd.cprevious)
 vim.keymap.set("n", "<S-down>", vim.cmd.cnext)
-vim.keymap.set("n", "<F9>", function() qf.toggle_qf "q" end)
+vim.keymap.set("n", "<F6>", function() qf.toggle_qf "q" end)
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>")
