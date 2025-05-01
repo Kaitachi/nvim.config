@@ -21,7 +21,17 @@ For some reason, some keystrokes related to arrow keys are not properly sent by 
 
 | Key        | Action     |
 |------------|------------|
+| Shift-F9   | <C-[>[1;23 |
+| Shift-F10  | <C-[>[1;24 |
 | Shift-Up   | <C-[>[1;2A |
 | Shift-Down | <C-[>[1;2B |
 | Ctrl-Up    | <C-[>[1;5A |
 | Ctrl-Down  | <C-[>[1;5B |
+
+## Custom macOS Keyboard Shortcuts
+
+* ⌥1 - Switch to Desktop 1
+* ⌥2 - Switch to Desktop 2
+* ⌥3 - Switch to Desktop 3
+* ⌥4 - Switch to Desktop 4
+* ⌥5 - Switch to Desktop 5
