@@ -70,7 +70,7 @@ return {
 		},
 		right = {
 			{ 'lineinfo' },
-			{ 'percent', 'warns', 'errs' },
+			{ 'percent', 'diagnosticwarns', 'diagnosticerrs' },
 			{ 'fileformat', 'fileencoding', 'filetype' }
 		}
 	},
@@ -80,12 +80,12 @@ return {
 	},
 	component_expand = {
 		gitdetachedhead = 'LightlineGitDetachedHead',
-		warns = 'LightlineDiagnosticWarns',
-		errs = 'LightlineDiagnosticErrors',
+		diagnosticwarns = 'LightlineDiagnosticWarns',
+		diagnosticerrs = 'LightlineDiagnosticErrors',
 	},
 	component_type = {
 		gitdetachedhead = 'error',
-		warns = 'warning',
-		errs = 'error'
+		diagnosticwarns = 'warning',
+		diagnosticerrs = 'error'
 	},
 }
