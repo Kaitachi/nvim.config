@@ -86,7 +86,6 @@ vim.api.nvim_create_autocmd({"DiagnosticChanged"}, {
 	desc = "[lsp] Add diagnostics to loclist on change",
 	group = au_lq,
 	callback = function()
-		--print("diagchang " .. vim.diagnostic.count()[vim.diagnostic.severity.ERROR])
 		vim.diagnostic.setloclist({ open = false, severity = { min = vim.diagnostic.severity.WARN } })
 
 		vim.cmd("call lightline#update()")
