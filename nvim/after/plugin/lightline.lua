@@ -37,6 +37,28 @@ function! LightlineCurrentRelativePath()
 endfunction
 ]], false)
 
+-- Set lightline Diagnostic warning count
+vim.api.nvim_exec([[
+function! LightlineDiagnosticWarns()
+	if !empty(v:lua.vim.diagnostic.count()[1])
+		return v:lua.vim.diagnostic.count()[1]
+	endif
+
+	return ""
+endfunction
+]], false)
+
+-- Set lightline Diagnostic error count
+vim.api.nvim_exec([[
+function! LightlineDiagnosticErrors()
+	if !empty(v:lua.vim.diagnostic.count()[0])
+		return v:lua.vim.diagnostic.count()[0]
+	endif
+
+	return ""
+endfunction
+]], false)
+
 -- FIXME: Currently not using this object!!!
 return {
 	colorscheme = 'custom',
@@ -46,15 +68,24 @@ return {
 			{ 'gitdetachedhead', 'gitbranch' },
 			{ 'readonly', 'relpath', 'modified' }
 		},
+		right = {
+			{ 'lineinfo' },
+			{ 'percent', 'warns', 'errs' },
+			{ 'fileformat', 'fileencoding', 'filetype' }
+		}
 	},
 	component_function = {
 		gitbranch = 'LightlineGitCurrentBranch',
 		relpath = 'LightlineCurrentRelativePath'
 	},
 	component_expand = {
-		gitdetachedhead = 'LightlineGitDetachedHead'
+		gitdetachedhead = 'LightlineGitDetachedHead',
+		warns = 'LightlineDiagnosticWarns',
+		errs = 'LightlineDiagnosticErrors',
 	},
 	component_type = {
-		gitdetachedhead = 'error'
+		gitdetachedhead = 'error',
+		warns = 'warning',
+		errs = 'error'
 	},
 }

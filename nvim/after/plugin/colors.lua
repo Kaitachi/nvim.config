@@ -9,16 +9,25 @@ function ColorMyPencils(color)
 				{ 'gitdetachedhead', 'gitbranch' },
 				{ 'readonly', 'relpath', 'modified' }
 			},
+			right = {
+				{ 'lineinfo' },
+				{ 'percent', 'diagnosticwarns', 'diagnosticerrs' },
+				{ 'fileformat', 'fileencoding', 'filetype' }
+			}
 		},
 		component_function = {
 			gitbranch = 'LightlineGitCurrentBranch',
 			relpath = 'LightlineCurrentRelativePath'
 		},
 		component_expand = {
-			gitdetachedhead = 'LightlineGitDetachedHead'
+			gitdetachedhead = 'LightlineGitDetachedHead',
+			diagnosticwarns = 'LightlineDiagnosticWarns',
+			diagnosticerrs = 'LightlineDiagnosticErrors',
 		},
 		component_type = {
-			gitdetachedhead = 'error'
+			gitdetachedhead = 'error',
+			diagnosticwarns = 'warning',
+			diagnosticerrs = 'error'
 		},
 	}
 

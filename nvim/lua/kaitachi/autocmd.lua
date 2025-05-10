@@ -78,6 +78,22 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
 })
 
 
+-- Add Diagnostics to localqflist
+-- Adapted from Rafaelleru - thank you!
+-- https://rafaelleru.github.io/blog/quickfix-autocomands/
+local au_lq = vim.api.nvim_create_augroup("lsp_send_to_loclist", { clear = true })
+vim.api.nvim_create_autocmd({"DiagnosticChanged"}, {
+	desc = "[lsp] Add diagnostics to loclist on change",
+	group = au_lq,
+	callback = function()
+		--print("diagchang " .. vim.diagnostic.count()[vim.diagnostic.severity.ERROR])
+		vim.diagnostic.setloclist({ open = false, severity = { min = vim.diagnostic.severity.WARN } })
+
+		vim.cmd("call lightline#update()")
+	end
+})
+
+
 -- Because one cannot simply have it too easy sometimes...
 vim.api.nvim_create_user_command("Q", "q", {})
 vim.api.nvim_create_user_command("W", "w", {})
