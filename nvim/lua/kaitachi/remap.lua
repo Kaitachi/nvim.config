@@ -51,8 +51,8 @@ vim.keymap.set("n", "<leader>]", vim.cmd.bn)
 vim.keymap.set("n", "<BS>", "<C-o>")
 
 -- Quickfix management
-vim.keymap.set("n", "<S-up>", vim.cmd.cprevious)
-vim.keymap.set("n", "<S-down>", vim.cmd.cnext)
+vim.keymap.set("n", "<C-up>", vim.cmd.cprevious)
+vim.keymap.set("n", "<C-down>", vim.cmd.cnext)
 vim.keymap.set("n", "<F6>", function() qf.toggle_qf "q" end)
 vim.keymap.set("n", "<F18>", function() qf.toggle_qf "l" end)
 
