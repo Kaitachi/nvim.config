@@ -5,14 +5,14 @@ function ColorMyPencils(color)
 		colorscheme = 'custom',
 		active = {
 			left = {
-				{ 'mode', 'paste' },
+				{ 'mode',            'paste' },
 				{ 'gitdetachedhead', 'gitbranch' },
-				{ 'readonly', 'relpath', 'modified' }
+				{ 'readonly',        'relpath',  'modified' }
 			},
 			right = {
 				{ 'lineinfo' },
-				{ 'percent', 'diagnosticwarns', 'diagnosticerrs' },
-				{ 'fileformat', 'fileencoding', 'filetype' }
+				{ 'percent',    'diagnosticwarns', 'diagnosticerrs' },
+				{ 'fileformat', 'fileencoding',    'filetype' }
 			}
 		},
 		component_function = {
@@ -60,7 +60,8 @@ function ColorMyPencils(color)
 
 
 	-- Custom italics for diagnostics
-	local highlights_diagnostics = { "VirtualTextError", "VirtualTextWarning", "VirtualTextInfo", "VirtualTextHint", "DiagnosticOk" }
+	local highlights_diagnostics = { "VirtualTextError", "VirtualTextWarning", "VirtualTextInfo", "VirtualTextHint",
+		"DiagnosticOk" }
 
 	for _, v in pairs(highlights_diagnostics) do
 		local hl_diag = vim.api.nvim_get_hl(0, { name = v })
@@ -74,4 +75,3 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
-

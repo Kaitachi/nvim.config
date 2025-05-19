@@ -1,69 +1,80 @@
 local lsp = require("lsp-zero")
 local lspconfig = require("lspconfig")
+local cmp = require('cmp')
 
-local npm_path = vim.fn.system { 'which', 'npm' }:gsub("bin/npm\n", "")
 
 lsp.preset("recommended")
-
-lsp.ensure_installed({
-})
-
--- Fix Undefined global 'vim'
-lsp.configure('lua_ls', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
-
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-})
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
-
-lsp.on_attach(function(client, bufnr)
-  -- See :help lsp-zero-keybindings
-  local opts = {buffer = bufnr, remap = false}
-
-  -- Diagnostic keymaps
-  vim.keymap.set("n", "<S-up>", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "<S-down>", vim.diagnostic.goto_next, opts)
-  vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-
-  -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-  vim.keymap.set("n", "<leader>h", vim.lsp.buf.signature_help, opts)
-  vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-  vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-end)
-
 lsp.setup()
 
-vim.diagnostic.config({
-    virtual_text = true
+-- Add borders to floating windows
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+	vim.lsp.handlers.hover,
+	{ border = 'rounded' }
+)
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+	vim.lsp.handlers.signature_help,
+	{ border = 'rounded' }
+)
+
+-- Add cmp_nvim_lsp capabilities settings to lspconfig
+-- This should be executed before you configure any language server
+local lspconfig_defaults = require('lspconfig').util.default_config
+lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+	'force',
+	lspconfig_defaults.capabilities,
+	require('cmp_nvim_lsp').default_capabilities()
+)
+
+-- This is where you enable features that only work
+-- if there is a language server active in the file
+vim.api.nvim_create_autocmd('LspAttach', {
+	-- See :help lsp-zero-keybindings
+	callback = function(event)
+		local opts = { buffer = event.buf }
+
+		-- Diagnostic keymaps
+		vim.keymap.set("n", "<S-up>", vim.diagnostic.goto_prev, opts)
+		vim.keymap.set("n", "<S-down>", vim.diagnostic.goto_next, opts)
+		vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+
+		vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+		vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+		vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+		vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+		vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+		vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+		vim.keymap.set('n', '<leader>h', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+		vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+		vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+		vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+	end,
 })
 
-lsp.setup_servers({"gopls", "tsserver", "svelte"})
+
+vim.diagnostic.config({
+	virtual_text = true
+})
+
+
+-- Set up autocomplete
+cmp.setup({
+	sources = {
+		{ name = 'nvim_lsp' },
+	},
+	snippet = {
+		expand = function(args)
+			require('luasnip').lsp_expand(args.body)
+		end,
+	},
+	mapping = cmp.mapping.preset.insert({}),
+})
+
+
+lsp.setup_servers({ "gopls", "tsserver", "svelte" })
 
 if lspconfig.ts_ls ~= nil then
+	local npm_path = vim.fn.system { 'which', 'npm' }:gsub("bin/npm\n", "")
+
 	lspconfig.ts_ls.setup({
 		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 		init_options = {

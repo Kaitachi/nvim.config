@@ -4,32 +4,32 @@ local ui = require('dapui')
 
 require("dapui").setup({
 	layouts = { {
-        elements = { {
-            id = "scopes",
-            size = 0.25
-          }, {
-            id = "breakpoints",
-            size = 0.25
-          }, {
-            id = "stacks",
-            size = 0.25
-          }, {
-            id = "watches",
-            size = 0.25
-          } },
-        position = "right",
-        size = 40
-      }, {
-        elements = { {
-            id = "repl",
-            size = 0.5
-          }, {
-            id = "console",
-            size = 0.5
-          } },
-        position = "bottom",
-        size = 10
-      } }
+		elements = { {
+			id = "scopes",
+			size = 0.25
+		}, {
+			id = "breakpoints",
+			size = 0.25
+		}, {
+			id = "stacks",
+			size = 0.25
+		}, {
+			id = "watches",
+			size = 0.25
+		} },
+		position = "right",
+		size = 40
+	}, {
+		elements = { {
+			id = "repl",
+			size = 0.5
+		}, {
+			id = "console",
+			size = 0.5
+		} },
+		position = "bottom",
+		size = 10
+	} }
 })
 
 -- Keybinds
@@ -101,18 +101,17 @@ require("dap-go").setup()
 --     mode = "test",
 --     program = "${file}"
 --   },
---   -- works with go.mod packages and sub packages 
+--   -- works with go.mod packages and sub packages
 --   {
 --     type = "delve",
 --     name = "Debug test (go.mod)",
 --     request = "launch",
 --     mode = "test",
 --     program = "./${relativeFileDirname}"
---   } 
+--   }
 -- }
 --dap.adapters.delve = {
 --	type = "server",
 --	host = "127.0.0.1",
 --	port = 38697,
 --}
-

@@ -64,14 +64,14 @@ return {
 	colorscheme = 'custom',
 	active = {
 		left = {
-			{ 'mode', 'paste' },
+			{ 'mode',            'paste' },
 			{ 'gitdetachedhead', 'gitbranch' },
-			{ 'readonly', 'relpath', 'modified' }
+			{ 'readonly',        'relpath',  'modified' }
 		},
 		right = {
 			{ 'lineinfo' },
-			{ 'percent', 'diagnosticwarns', 'diagnosticerrs' },
-			{ 'fileformat', 'fileencoding', 'filetype' }
+			{ 'percent',    'diagnosticwarns', 'diagnosticerrs' },
+			{ 'fileformat', 'fileencoding',    'filetype' }
 		}
 	},
 	component_function = {

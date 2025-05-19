@@ -46,22 +46,21 @@ function toggle_telescope(harpoon_files)
 		previewer = conf.file_previewer({}),
 		sorter = conf.generic_sorter({}),
 		attach_mappings = function(prompt_buffer_number, map)
-		  map("i", "<C-x>", function()
-			  local state = require("telescope.actions.state")
-			  local selected_entry = state.get_selected_entry()
-			  local current_picker = state.get_current_picker(prompt_buffer_number)
+			map("i", "<C-x>", function()
+				local state = require("telescope.actions.state")
+				local selected_entry = state.get_selected_entry()
+				local current_picker = state.get_current_picker(prompt_buffer_number)
 
-			  -- harpoon:list():remove_at(selected_entry.index)
-			  table.remove(harpoon:list().items, selected_entry.index)
-			  current_picker:refresh(harpoon_make_finder(harpoon_get_paths(harpoon:list())))
+				-- harpoon:list():remove_at(selected_entry.index)
+				table.remove(harpoon:list().items, selected_entry.index)
+				current_picker:refresh(harpoon_make_finder(harpoon_get_paths(harpoon:list())))
 			end
-		  )
+			)
 
-		  return true
+			return true
 		end
-  }):find()
+	}):find()
 end
 
 vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
 	{ desc = "Open harpoon window" })
-

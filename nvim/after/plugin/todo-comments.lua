@@ -62,4 +62,3 @@ if vim.fn.has("macunix") == 1 then
 else
 	-- TODO: Redefine colors for gui
 end
-

@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
 	ensure_installed = {
 		"c",
@@ -40,4 +40,3 @@ vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { ctermbg = "White", cterm
 
 -- Remove TODO highlights (using another plugin for this)
 vim.api.nvim_set_hl(0, "@comment.todo.comment", { link = "TodoBgTODO" })
-

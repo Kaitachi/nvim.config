@@ -1,6 +1,6 @@
 -- Enable spelling on text files
 local au_ft = vim.api.nvim_create_augroup("ft", { clear = true })
-vim.api.nvim_create_autocmd({"FileType"}, {
+vim.api.nvim_create_autocmd({ "FileType" }, {
 	desc = "[spell] Enable spelling on text files",
 	pattern = { "markdown", "org", "txt", "tex" },
 	group = au_ft,
@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd({"FileType"}, {
 -- Adapted from Jeff Kreeftmeijer - thank you!
 -- https://jeffkreeftmeijer.com/vim-number/#fnr.1
 local au_numbertoggle = vim.api.nvim_create_augroup("numbertoggle", { clear = true })
-vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave", "WinEnter"}, {
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
 	desc = "[rnu] Toggle (on) relative numbers when leaving Insert mode",
 	pattern = "*",
 	group = au_numbertoggle,
@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave", "WinEnter
 	end
 })
 
-vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter", "WinLeave"}, {
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
 	desc = "[rnu] Toggle (off) relative numbers when entering Insert mode",
 	pattern = "*",
 	group = au_numbertoggle,
@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter", "WinLeave"}
 
 -- Diagnostic toggle
 local au_diagnostictoggle = vim.api.nvim_create_augroup("diagnostictoggle", { clear = true })
-vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave", "WinEnter"}, {
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
 	desc = "[diag] Toggle (on) diagnostic virtual text when leaving Insert mode",
 	pattern = "*",
 	group = au_diagnostictoggle,
@@ -45,7 +45,7 @@ vim.api.nvim_create_autocmd({"BufEnter", "FocusGained", "InsertLeave", "WinEnter
 	end
 })
 
-vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter", "WinLeave"}, {
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
 	desc = "[diag] Toggle (off) diagnostic virtual text when entering Insert mode",
 	pattern = "*",
 	group = au_diagnostictoggle,
@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter", "WinLeave"}
 
 -- Highlight text that is being yanked
 local au_hy = vim.api.nvim_create_augroup("hy", { clear = true })
-vim.api.nvim_create_autocmd({"TextYankPost"}, {
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	desc = "[y] Highlight when yanking text",
 	group = au_hy,
 	callback = function()
@@ -68,10 +68,18 @@ vim.api.nvim_create_autocmd({"TextYankPost"}, {
 
 -- Format buffer on save
 local au_fs = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = true })
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	desc = "[lsp] format on save",
-	pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.vue" },
 	group = au_fs,
+	callback = function()
+		vim.lsp.buf.format()
+	end
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	desc = "[lsp] format on save (EslintFixAll)",
+	group = au_fs,
+	pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.vue" },
 	callback = function()
 		vim.cmd("EslintFixAll")
 	end
@@ -82,7 +90,7 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
 -- Adapted from Rafaelleru - thank you!
 -- https://rafaelleru.github.io/blog/quickfix-autocomands/
 local au_lq = vim.api.nvim_create_augroup("lsp_send_to_loclist", { clear = true })
-vim.api.nvim_create_autocmd({"DiagnosticChanged"}, {
+vim.api.nvim_create_autocmd({ "DiagnosticChanged" }, {
 	desc = "[lsp] Add diagnostics to loclist on change",
 	group = au_lq,
 	callback = function()

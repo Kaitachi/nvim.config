@@ -33,7 +33,11 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Formatting
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<C-bslash><C-f>", vim.lsp.buf.format)
+
+-- Delete word (same shortcut as OS)
+vim.keymap.set("i", "<C-BS>", "<C-w>")
+vim.keymap.set("i", "<C-h>", "<C-w>")
 
 -- Easy find/replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

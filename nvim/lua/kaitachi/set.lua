@@ -1,7 +1,7 @@
-vim.opt.number = true -- Show line numbers
+vim.opt.number = true         -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
-vim.opt.cursorline = true -- Highlight current cursor line
-vim.opt.showmode = false -- Don't show current mode (lightline takes care of this)
+vim.opt.cursorline = true     -- Highlight current cursor line
+vim.opt.showmode = false      -- Don't show current mode (lightline takes care of this)
 
 -- Whitespace and indentations
 vim.opt.tabstop = 4
@@ -11,7 +11,7 @@ vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.breakindent = true
 vim.opt.list = false
-vim.opt.listchars = { tab = '▷ ', trail = '·', extends = '»', precedes = '«' , nbsp = '␣', eol = '↵' }
+vim.opt.listchars = { tab = '▷ ', trail = '·', extends = '»', precedes = '«', nbsp = '␣', eol = '↵' }
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
@@ -50,4 +50,3 @@ if not vim.fn.has("termguicolors") then
 	-- Apply termguicolors if available
 	vim.opt.termguicolors = true
 end
-
