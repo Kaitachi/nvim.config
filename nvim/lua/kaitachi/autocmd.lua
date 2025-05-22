@@ -1,12 +1,23 @@
 -- Enable spelling on text files
-local au_ft = vim.api.nvim_create_augroup("ft", { clear = true })
+local au_sp = vim.api.nvim_create_augroup("sp", { clear = true })
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	desc = "[spell] Enable spelling on text files",
 	pattern = { "markdown", "org", "txt", "tex" },
-	group = au_ft,
+	group = au_sp,
 	callback = function()
-		vim.api.nvim_win_set_option(0, "spell", true)
+		vim.opt_local.spell = true
 		vim.bo.spelllang = "en_us"
+	end
+})
+
+-- autocmd FileType help setlocal nospell
+-- TODO: Need to properly make this work on markdown files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	desc = "[spell] Disable spelling on help files",
+	pattern = { "markdown" },
+	group = au_sp,
+	callback = function()
+		vim.opt_local.spell = false
 	end
 })
 
@@ -68,11 +79,20 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Format buffer on save
 local au_fs = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = true })
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+vim.api.nvim_create_autocmd({ "LspAttach" }, {
 	desc = "[lsp] format on save",
 	group = au_fs,
-	callback = function()
-		vim.lsp.buf.format()
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+		if client ~= nil and client:supports_method('textDocument/formatting') then
+			vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+				buffer = args.buf,
+				callback = function()
+					vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+				end,
+			})
+		end
 	end
 })
 

@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
 	use({ 'ggandor/leap.nvim' })
 	use({
 		'nvim-telescope/telescope.nvim',
-		tag = '0.1.4',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	})
 
@@ -39,34 +38,15 @@ return require('packer').startup(function(use)
 	-- Vim enhancements
 	use({ 'mbbill/undotree' })       -- Git for undo/redo commands
 	use({ 'terrortylor/nvim-comment' }) -- Comment/uncomment code
-	use({ 'stevearc/overseer.nvim' }) -- Terminal within nvim
+	use({ 'stevearc/overseer.nvim' }) -- Terminal within neovim
 
 	-- Language Server Protocol
-	use({
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v1.x',
-		requires = {
-			-- LSP Support
-			{ 'neovim/nvim-lspconfig',              tag = 'v1.8.0',  pin = true },
-			{ 'mason-org/mason.nvim',               tag = 'v1.11.0', pin = true },
-			{ 'mason-org/mason-lspconfig.nvim',     tag = 'v1.32.0', pin = true },
+	-- LSP Support
+	use({ 'neovim/nvim-lspconfig' })
+	use({ 'mason-org/mason.nvim' })
+	use({ 'mason-org/mason-lspconfig.nvim' })
 
-			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },           -- Required
-			{ 'hrsh7th/cmp-nvim-lsp' },       -- Required
-			{ 'hrsh7th/cmp-nvim-lsp-signature-help' }, -- Optional
-			{ 'hrsh7th/cmp-buffer' },         -- Optional
-			{ 'hrsh7th/cmp-path' },           -- Optional
-			{ 'saadparwaiz1/cmp_luasnip' },   -- Optional
-			{ 'hrsh7th/cmp-nvim-lua' },       -- Optional
-
-			-- Snippets
-			{ 'L3MON4D3/LuaSnip' },    -- Required
-			{ 'rafamadriz/friendly-snippets' }, -- Optional
-		}
-	})
-
-	-- dap - Debugger
+	-- Debugger
 	use({
 		'mfussenegger/nvim-dap',
 		requires = {
@@ -78,7 +58,7 @@ return require('packer').startup(function(use)
 		}
 	})
 
-	-- dadbod - SQL Queries
+	-- SQL Queries
 	use({
 		'tpope/vim-dadbod',
 		requires = {
