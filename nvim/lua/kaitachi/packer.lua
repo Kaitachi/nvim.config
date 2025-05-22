@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
 	-- Vim enhancements
 	use({ 'mbbill/undotree' })       -- Git for undo/redo commands
 	use({ 'terrortylor/nvim-comment' }) -- Comment/uncomment code
+	use({ 'folke/which-key.nvim' })  -- Display keyboard shortcuts as you go
 	use({ 'stevearc/overseer.nvim' }) -- Terminal within neovim
 
 	-- Language Server Protocol
