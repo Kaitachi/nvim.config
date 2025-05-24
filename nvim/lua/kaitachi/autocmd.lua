@@ -98,13 +98,16 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 			buffer = args.buf,
 			callback = function()
 				if client:supports_method('textDocument/formatting') then
-					-- Format file on save
-					vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-				end
-
-				if client.name == "eslint" then
-					-- Fix Lint issues on save
-					vim.cmd("LspEslintFixAll")
+					if client.name == "eslint" then
+						-- Use eslint to fix Lint issues on save
+						vim.cmd("LspEslintFixAll")
+					elseif client.name == "vue_ls" then
+						-- vue_ls doesn't behave nicely when paired up with eslint,
+						-- so we won't set any buffer write actions for it
+					else
+						-- Format file on save (default behavior)
+						vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+					end
 				end
 			end,
 		})
