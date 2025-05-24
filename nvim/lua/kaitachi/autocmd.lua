@@ -96,15 +96,6 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 	end
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	desc = "[lsp] format on save (EslintFixAll)",
-	group = au_fs,
-	pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.vue" },
-	callback = function()
-		vim.cmd("EslintFixAll")
-	end
-})
-
 
 -- Add Diagnostics to localqflist
 -- Adapted from Rafaelleru - thank you!

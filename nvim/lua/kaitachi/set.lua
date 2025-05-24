@@ -2,6 +2,7 @@ vim.opt.number = true         -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.cursorline = true     -- Highlight current cursor line
 vim.opt.showmode = false      -- Don't show current mode (lightline takes care of this)
+vim.opt.winborder = "rounded" -- Show Borders for virtual buffers
 
 -- Whitespace and indentations
 vim.opt.tabstop = 4
@@ -35,6 +36,9 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 400
+
+-- Completion
+vim.opt.completeopt = "fuzzy,menu,noselect"
 
 -- Splits
 vim.opt.splitright = true
