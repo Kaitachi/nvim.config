@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 		vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
 		vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
-		vim.keymap.set('n', '<C-l>', vim.lsp.buf.code_action, opts)
+		vim.keymap.set('n', '<M-CR>', vim.lsp.buf.code_action, opts)
 		vim.keymap.set('n', '<leader>h', function() vim.lsp.buf.signature_help({ border = 'rounded' }) end, opts)
 	end,
 })

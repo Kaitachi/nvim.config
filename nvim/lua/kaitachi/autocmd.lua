@@ -102,15 +102,9 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 					vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
 				end
 
-				if client:supports_method('textDocument/codeAction') then
-					-- Resolve linter auto-fixable problems
-					local ctx = { only = "source.fixAll", diagnostics = {} }
-					local actions = vim.lsp.buf.code_action({ context = ctx, apply = true, return_actions = true })
-
-					-- only apply if code action is available
-					if actions and #actions > 0 then
-						vim.lsp.buf.code_action({ context = ctx, apply = true })
-					end
+				if client.name == "eslint" then
+					-- Fix Lint issues on save
+					vim.cmd("LspEslintFixAll")
 				end
 			end,
 		})
