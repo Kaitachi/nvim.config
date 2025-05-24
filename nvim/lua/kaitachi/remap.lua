@@ -62,10 +62,3 @@ vim.keymap.set("n", "<F18>", function() qf.toggle_qf "l" end)
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>")
-
--- Remove some keybinds that are set by neovim
-vim.api.nvim_del_keymap("n", "gri")
-vim.api.nvim_del_keymap("n", "grn")
-vim.api.nvim_del_keymap("n", "grr")
-vim.api.nvim_del_keymap("n", "gra")
-vim.api.nvim_del_keymap("x", "gra")

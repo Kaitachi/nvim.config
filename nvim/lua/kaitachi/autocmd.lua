@@ -85,7 +85,7 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-		if client == nil then
+		if not client then
 			return
 		end
 
@@ -94,15 +94,26 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 			vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
 		end
 
-		if client:supports_method('textDocument/formatting') then
-			-- Format file on save
-			vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-				buffer = args.buf,
-				callback = function()
+		vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+			buffer = args.buf,
+			callback = function()
+				if client:supports_method('textDocument/formatting') then
+					-- Format file on save
 					vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-				end,
-			})
-		end
+				end
+
+				if client:supports_method('textDocument/codeAction') then
+					-- Resolve linter auto-fixable problems
+					local ctx = { only = "source.fixAll", diagnostics = {} }
+					local actions = vim.lsp.buf.code_action({ context = ctx, apply = true, return_actions = true })
+
+					-- only apply if code action is available
+					if actions and #actions > 0 then
+						vim.lsp.buf.code_action({ context = ctx, apply = true })
+					end
+				end
+			end,
+		})
 	end
 })
 
