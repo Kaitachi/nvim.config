@@ -37,7 +37,7 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 400
 
 -- Completion
-vim.opt.completeopt = "fuzzy,menu,noselect"
+vim.opt.completeopt = "fuzzy,menu,menuone,noselect"
 
 -- Splits
 vim.opt.splitright = true
