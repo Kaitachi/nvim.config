@@ -2,7 +2,6 @@ vim.opt.number = true         -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.cursorline = true     -- Highlight current cursor line
 vim.opt.showmode = false      -- Don't show current mode (lightline takes care of this)
-vim.opt.winborder = "rounded" -- Show Borders for virtual buffers
 
 -- Whitespace and indentations
 vim.opt.tabstop = 4

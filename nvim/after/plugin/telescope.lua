@@ -51,7 +51,7 @@ end, { desc = "[Linux] Telescope show Git branches" })
 vim.keymap.set('n', '<leader>M', builtin.marks, { desc = "Show Vim Marks" })
 
 -- LSP
-vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = "Show LSP References" })
+vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = "Show LSP References", nowait = true })
 vim.keymap.set('n', '<leader>D', builtin.lsp_type_definitions, { desc = "Show LSP Type Definitions" })
 vim.keymap.set('n', '<leader>S', builtin.lsp_document_symbols, { desc = "Show LSP Document Symbols" })
 vim.keymap.set('n', '<leader>W', builtin.lsp_dynamic_workspace_symbols, { desc = "Show LSP Workspace Symbols" })
