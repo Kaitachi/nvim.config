@@ -7,17 +7,16 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use({ 'wbthomason/packer.nvim' })
 
-	-- File Searching
-	use({ 'ggandor/leap.nvim' })
-	use({
-		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/plenary.nvim' } }
-	})
-
 	-- Color Schemes / UI
 	use({ 'itchyny/lightline.vim' })
 	use({ 'sainnhe/edge' })
 	use({ 'folke/todo-comments.nvim' })
+
+	-- Searching Superpowers
+	use({
+		'nvim-telescope/telescope.nvim',
+		requires = { { 'nvim-lua/plenary.nvim' } }
+	})
 
 	-- Treesitter (code structure parsing)
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
@@ -36,8 +35,9 @@ return require('packer').startup(function(use)
 	use({ 'lewis6991/gitsigns.nvim' })
 
 	-- Vim enhancements
-	use({ 'mbbill/undotree' })     -- Git for undo/redo commands
+	use({ 'folke/flash.nvim' })    -- Better searching
 	use({ 'folke/which-key.nvim' }) -- Display keyboard shortcuts as you go
+	use({ 'mbbill/undotree' })     -- Git for undo/redo commands
 	use({ 'stevearc/overseer.nvim' }) -- Terminal within neovim
 
 	-- Language Server Protocol

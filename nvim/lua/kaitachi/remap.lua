@@ -40,7 +40,7 @@ vim.keymap.set("i", "<C-h>", "<C-w>")
 vim.keymap.set("n", "P", [["0p]])
 
 -- Update file executable flag
-vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Buffer management
 vim.keymap.set("n", "<leader>-", vim.cmd.bd)
@@ -56,3 +56,11 @@ vim.keymap.set("n", "<F18>", function() qf.toggle_qf "l" end)
 
 -- Go to Packer file
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/kaitachi/packer.lua<CR>")
+
+-- Remove some default keymaps
+vim.keymap.del("n", "gcc")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "gra")
+vim.keymap.del("x", "gra")
