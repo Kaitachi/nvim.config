@@ -92,6 +92,7 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 		if client:supports_method('textDocument/completion') then
 			-- Enable autocomplete
 			vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+			vim.keymap.set("i", "<M-CR>", "<C-x><C-o>")
 		end
 
 		vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
