@@ -13,7 +13,12 @@ telescope.setup({
 			"package%-lock.json",
 			".git"
 		}
-	}
+	},
+	pickers = {
+		oldfiles = {
+			cwd_only = true,
+		}
+	},
 })
 
 telescope.load_extension('harpoon')
