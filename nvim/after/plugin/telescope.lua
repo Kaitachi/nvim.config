@@ -42,15 +42,9 @@ vim.keymap.set('n', '<leader>f', builtin.live_grep, { desc = "Telescope fuzzy-fi
 
 -- Git Commands
 vim.keymap.set('n', '<F12>', function()
-	builtin.git_branches {
-		layout_strategy = "vertical"
-	}
+	local opts = require('telescope.themes').get_dropdown({})
+	builtin.git_branches(opts)
 end, { desc = "[macOS] Telescope show Git branches" })
-vim.keymap.set('n', '<F22>', function()
-	builtin.git_branches {
-		layout_strategy = "vertical"
-	}
-end, { desc = "[Linux] Telescope show Git branches" })
 
 -- Buffer Search
 vim.keymap.set('n', '<leader>M', builtin.marks, { desc = "Show Vim Marks" })
