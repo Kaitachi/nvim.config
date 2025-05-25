@@ -4,17 +4,18 @@ local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
 
-vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end, { desc = "Go to first Harpoon file" })
-vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end, { desc = "Go to second Harpoon file" })
-vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end, { desc = "Go to third Harpoon file" })
-vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end, { desc = "Go to fourth Harpoon file" })
+vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end, { desc = "[Harpoon] Go to first file" })
+vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end, { desc = "[Harpoon] Go to second file" })
+vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end, { desc = "[Harpoon] Go to third file" })
+vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end, { desc = "[Harpoon] Go to fourth file" })
 
 -- FIX: BROKEN COMMANDS! Find out how to fix these...
-vim.keymap.set("n", "<Tab>", function() harpoon:list():next() end, { desc = "Go to next Harpoon file" })
-vim.keymap.set("n", "<S-Tab>", function() harpoon:list():prev() end, { desc = "Go to previous Harpoon file" })
+vim.keymap.set("n", "<Tab>", function() harpoon:list():next() end, { desc = "[Harpoon] Go to next file" })
+vim.keymap.set("n", "<S-Tab>", function() harpoon:list():prev() end, { desc = "[Harpoon] Go to previous file" })
 
-vim.keymap.set("n", "<C-s>", function() harpoon:list():add() end, { desc = "Add file to Harpoon list" })
-vim.keymap.set("n", "<C-g>", function() harpoon:list():select(vim.v.count1) end, { desc = "Go to selected Harpoon file" })
+vim.keymap.set("n", "<C-s>", function() harpoon:list():add() end, { desc = "[Harpoon] Add file to list" })
+vim.keymap.set("n", "<C-g>", function() harpoon:list():select(vim.v.count1) end,
+	{ desc = "[Harpoon] Go to {count} file" })
 
 -- Telescope Integration
 local function harpoon_get_paths(files)
@@ -63,4 +64,4 @@ function toggle_telescope(harpoon_files)
 end
 
 vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-	{ desc = "Open harpoon window" })
+	{ desc = "[Harpoon] Open Harpoon window" })

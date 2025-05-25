@@ -92,7 +92,14 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 		if client:supports_method('textDocument/completion') then
 			-- Enable autocomplete
 			vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-			vim.keymap.set("i", "<M-CR>", "<C-x><C-o>")
+			vim.keymap.set("i", "<M-CR>", "<C-x><C-o>", { desc = "[lsp] Show Completion Options" })
+		end
+
+
+		if client.name == "vue_ls" then
+			-- vue_ls doesn't behave nicely when paired up with eslint,
+			-- so we won't set any buffer write actions for it
+			return
 		end
 
 		vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
@@ -102,9 +109,6 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 					if client.name == "eslint" then
 						-- Use eslint to fix Lint issues on save
 						vim.cmd("LspEslintFixAll")
-					elseif client.name == "vue_ls" then
-						-- vue_ls doesn't behave nicely when paired up with eslint,
-						-- so we won't set any buffer write actions for it
 					else
 						-- Format file on save (default behavior)
 						vim.lsp.buf.format({ bufnr = args.buf, id = client.id })

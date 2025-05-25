@@ -33,16 +33,17 @@ require("dapui").setup({
 })
 
 -- Keybinds
-vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
-vim.keymap.set("n", "<leader>gb", dap.run_to_cursor)
-vim.keymap.set("n", "<leader><F1>", ui.toggle)
-
-vim.keymap.set("n", "<F1>", dap.continue)
-vim.keymap.set("n", "<F2>", dap.step_into)
-vim.keymap.set("n", "<F3>", dap.step_over)
-vim.keymap.set("n", "<F4>", dap.step_out)
-vim.keymap.set("n", "<F5>", dap.step_back)
-vim.keymap.set("n", "<F13>", dap.restart)
+-- TODO: Attach these on some condition...
+-- vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
+-- vim.keymap.set("n", "<leader>gb", dap.run_to_cursor)
+-- vim.keymap.set("n", "<leader><F1>", ui.toggle)
+--
+-- vim.keymap.set("n", "<F1>", dap.continue)
+-- vim.keymap.set("n", "<F2>", dap.step_into)
+-- vim.keymap.set("n", "<F3>", dap.step_over)
+-- vim.keymap.set("n", "<F4>", dap.step_out)
+-- vim.keymap.set("n", "<F5>", dap.step_back)
+-- vim.keymap.set("n", "<F13>", dap.restart)
 
 -- Fancy dap-ui integration
 dap.listeners.before.attach.dapui_config = function()
