@@ -43,8 +43,10 @@ return require('packer').startup(function(use)
 	-- Language Server Protocol
 	-- LSP Support
 	use({ 'neovim/nvim-lspconfig' })
-	use({ 'mason-org/mason.nvim' })
-	use({ 'mason-org/mason-lspconfig.nvim' })
+	use({
+		'mason-org/mason.nvim',
+		requires = 'mason-org/mason-lspconfig.nvim'
+	})
 
 	-- Debugger
 	use({

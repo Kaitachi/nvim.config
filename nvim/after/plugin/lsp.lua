@@ -37,9 +37,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { unpack(opts), desc = "[Code] Go to Declaration" })
 		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { unpack(opts), desc = "[Code] Go to Implementation" })
 		vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, { unpack(opts), desc = "[Code] Go to Type Definition" })
-		vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { unpack(opts), desc = "[Code] Rename" })
-		vim.keymap.set('n', '<M-CR>', vim.lsp.buf.code_action, { unpack(opts), desc = "[Code] Show Code Actions" })
-		vim.keymap.set('n', '<leader>h', function() vim.lsp.buf.signature_help({ border = 'rounded' }) end,
+		vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { unpack(opts), desc = "[Code] Rename" })
+		vim.keymap.set('n', '<space><space>', vim.lsp.buf.code_action,
+			{ unpack(opts), desc = "[Code] Show Code Actions" })
+		vim.keymap.set('n', '<space>h', function() vim.lsp.buf.signature_help({ border = 'rounded' }) end,
 			{ unpack(opts), desc = "[Code] Show Signature Help" })
 		--#endregion
 
