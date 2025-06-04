@@ -1,7 +1,7 @@
 local npm_path = vim.fn.system { "which", "npm" }:gsub("bin/npm\n", "")
 local vue_typescript_plugin_path = npm_path .. "lib/node_modules/@vue/typescript-plugin"
 
-return {
+vim.lsp.config.ts_ls = {
 	filetypes = {
 		"javascript",
 		"javascriptreact",
@@ -11,6 +11,9 @@ return {
 		"typescript.tsx",
 		"vue",
 	},
+}
+
+return {
 	init_options = {
 		plugins = {
 			{
