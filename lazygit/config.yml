@@ -10,8 +10,6 @@ git:
     - main
     - dev
   autoForwardBranches: allBranches
-  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
-  # branchLogCmd: "log --graph --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset) %C(auto)%d%C(reset)' --abbrev-commit --date=relative {{branchName}} --"
+  branchLogCmd: "git log --graph --color=always --oneline --decorate --date=relative {{branchName}} --"
   allBranchesLogCmds:
-    # - "log --graph --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset) %C(auto)%d%C(reset)' --abbrev-commit --date=relative --all"
-    - "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline"
+    - "git log --graph --color=always --oneline --decorate --date=relative --all"
