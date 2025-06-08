@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
 	-- Vim Git (Git for Vim)
 	use({ 'tpope/vim-fugitive' })
 	use({ 'lewis6991/gitsigns.nvim' })
+	use({ 'linrongbin16/gitlinker.nvim' })
 
 	-- Vim enhancements
 	use({ 'folke/flash.nvim' })    -- Better searching

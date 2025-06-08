@@ -32,16 +32,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		-- LSP keymaps
 		vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end,
-			{ unpack(opts), desc = "[Code] Hover word" })
-		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { unpack(opts), desc = "[Code] Go to Definition" })
-		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { unpack(opts), desc = "[Code] Go to Declaration" })
-		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { unpack(opts), desc = "[Code] Go to Implementation" })
-		vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, { unpack(opts), desc = "[Code] Go to Type Definition" })
-		vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { unpack(opts), desc = "[Code] Rename" })
+			{ unpack(opts), desc = "Hover word" })
+		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { unpack(opts), desc = "Go to Definition" })
+		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { unpack(opts), desc = "Go to Declaration" })
+		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { unpack(opts), desc = "Go to Implementation" })
+		vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, { unpack(opts), desc = "Go to Type Definition" })
+		vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { unpack(opts), desc = "Rename" })
 		vim.keymap.set('n', '<space><space>', vim.lsp.buf.code_action,
-			{ unpack(opts), desc = "[Code] Show Code Actions" })
+			{ unpack(opts), desc = "Show Code Actions" })
 		vim.keymap.set('n', '<space>h', function() vim.lsp.buf.signature_help({ border = 'rounded' }) end,
-			{ unpack(opts), desc = "[Code] Show Signature Help" })
+			{ unpack(opts), desc = "Show Signature Help" })
 		--#endregion
 
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
