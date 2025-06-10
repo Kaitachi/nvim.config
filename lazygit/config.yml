@@ -1,6 +1,7 @@
 gui:
   nerdFontsVersion: 3
   expandFocusedSidePanel: true
+  expandedSidePanelWeight: 16
   filterMode: fuzzy
   statusPanelView: allBranchesLog
 
