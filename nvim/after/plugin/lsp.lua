@@ -40,10 +40,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { unpack(opts), desc = "Go to Implementation" })
 		vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, { unpack(opts), desc = "Go to Type Definition" })
 		vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { unpack(opts), desc = "Rename" })
-		vim.keymap.set('n', '<space><space>', vim.lsp.buf.code_action,
-			{ unpack(opts), desc = "Show Code Actions" })
 		vim.keymap.set('n', '<space>h', function() vim.lsp.buf.signature_help({ border = 'rounded' }) end,
 			{ unpack(opts), desc = "Show Signature Help" })
+		vim.keymap.set('n', '<C-x><C-o>', vim.lsp.buf.code_action,
+			{ unpack(opts), desc = "Show Code Actions" })
 		--#endregion
 
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
