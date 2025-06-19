@@ -15,7 +15,10 @@ return require('packer').startup(function(use)
 	-- Searching Superpowers
 	use({
 		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/plenary.nvim' } }
+		requires = {
+			{ 'nvim-telescope/telescope-ui-select.nvim' },
+			{ 'nvim-lua/plenary.nvim' }
+		}
 	})
 
 	-- Treesitter (code structure parsing)

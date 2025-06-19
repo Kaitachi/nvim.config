@@ -1,5 +1,6 @@
 local telescope = require("telescope")
 local builtin = require('telescope.builtin')
+local strings = require('plenary.strings')
 
 telescope.setup({
 	defaults = {
@@ -19,8 +20,63 @@ telescope.setup({
 			cwd_only = true,
 		}
 	},
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_cursor {
+				-- even more opts
+			},
+			specific_opts = {
+				["overseer_template"] = {
+					make_indexed = function(items)
+						local indexed_items = {}
+						local widths = {
+							idx = 0,
+							name = 0,
+						}
+						for idx, item in ipairs(items) do
+							local entry = {
+								idx = idx,
+								name = item.name,
+							}
+							table.insert(indexed_items, entry)
+							widths.idx = math.max(widths.idx, strings.strdisplaywidth(entry.idx))
+							widths.name = math.max(widths.name,
+								strings.strdisplaywidth(entry.name))
+						end
+						return indexed_items, widths
+					end,
+					make_displayer = function(widths)
+						return require("telescope.pickers.entry_display").create {
+							separator = " ",
+							items = {
+								{ width = widths.idx + 1 }, -- +1 for ":" suffix
+								{ width = widths.name },
+							},
+						}
+					end,
+					make_display = function(displayer)
+						return function(e)
+							return displayer {
+								{ e.value.idx .. ":", "TelescopePromptPrefix" },
+								{ e.value.name },
+							}
+						end
+					end,
+					make_ordinal = function(e)
+						return e.idx .. e.name
+					end,
+				},
+			}
+		}
+	}
 })
 
+-- HACK: Useful to let us know what kind we want to use for ui-select options
+-- vim.ui.select = function(items, opts, on_choice)
+-- 	print(opts.kind)
+-- end
+
+telescope.load_extension('ui-select')
 telescope.load_extension('harpoon')
 
 -- Telescope Search
