@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
 		'mason-org/mason.nvim',
 		requires = 'mason-org/mason-lspconfig.nvim'
 	})
+	use({ 'onsails/lspkind.nvim' })
 
 	-- Debugger
 	use({

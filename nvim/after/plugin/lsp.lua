@@ -1,3 +1,5 @@
+local lspkind = require('lspkind')
+
 -- Show diagnostics in virtual text
 vim.diagnostic.config({
 	virtual_text = true,
@@ -115,4 +117,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		})
 		--#endregion
 	end
+})
+
+
+lspkind.setup({
+	mode = 'symbol_text',
 })
