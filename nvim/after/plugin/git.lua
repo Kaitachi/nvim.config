@@ -23,8 +23,8 @@ gitsigns.setup {
 -- Set fancy colors
 vim.api.nvim_set_hl(0, "DiffAdded", { link = "DiffAdd" })
 vim.api.nvim_set_hl(0, "DiffRemoved", { link = "DiffDelete" })
-vim.api.nvim_set_hl(0, "DiffLine", { link = "OctoGreyFloat" })
-vim.api.nvim_set_hl(0, "DiffSubname", { link = "OctoBlueFloat" })
+vim.api.nvim_set_hl(0, "DiffLine", { link = "IncSearch" })
+vim.api.nvim_set_hl(0, "DiffSubname", { link = "StatusLine" })
 
 -- Enable GitHub links
 linker.setup({

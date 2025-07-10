@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
 
 	-- Color Schemes / UI
 	use({ 'itchyny/lightline.vim' })
+	use({ 'nordtheme/vim' })
 	use({ 'sainnhe/edge' })
 	use({ 'folke/todo-comments.nvim' })
 

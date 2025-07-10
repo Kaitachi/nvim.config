@@ -10,55 +10,58 @@ comments.setup({
 	},
 })
 
--- So, apparently macOS does not support the color nomenclature used by todo-comments... =(
-if vim.fn.has("macunix") == 1 then
-	-- Red
-	-- FIX: sample fix string
-	vim.api.nvim_set_hl(0, "TodoSignFIX", { ctermfg = "DarkRed" })
-	vim.api.nvim_set_hl(0, "TodoFgFIX", { ctermfg = "DarkRed" })
-	vim.api.nvim_set_hl(0, "TodoBgFIX", { ctermbg = "DarkRed", ctermfg = "White", bold = true })
+local nord_palette = vim.fn['NordPalette']()
+local nord_fg = nord_palette["nord6"]
 
-	-- Orange
-	-- TODO: sample todo string
-	vim.api.nvim_set_hl(0, "TodoSignTODO", { ctermfg = 202 })
-	vim.api.nvim_set_hl(0, "TodoFgTODO", { ctermfg = 202 })
-	vim.api.nvim_set_hl(0, "TodoBgTODO", { ctermbg = 202, ctermfg = "White", bold = true })
+-- Red
+-- FIX: sample fix string
+vim.api.nvim_set_hl(0, "TodoSignFIX", { fg = nord_palette["nord11"], ctermfg = 11 })
+vim.api.nvim_set_hl(0, "TodoFgFIX", { fg = nord_palette["nord11"], ctermfg = 11 })
+vim.api.nvim_set_hl(0, "TodoBgFIX", { bg = nord_palette["nord11"], fg = nord_fg, ctermbg = 11, ctermfg = 6, bold = true })
 
-	-- Yellow
-	-- WARN: sample warn string
-	vim.api.nvim_set_hl(0, "TodoSignWARN", { ctermfg = "DarkYellow" })
-	vim.api.nvim_set_hl(0, "TodoFgWARN", { ctermfg = "DarkYellow" })
-	vim.api.nvim_set_hl(0, "TodoBgWARN", { ctermbg = "DarkYellow", ctermfg = "White", bold = true })
+-- Orange
+-- TODO: sample todo string
+vim.api.nvim_set_hl(0, "TodoSignTODO", { fg = nord_palette["nord12"], ctermfg = 12 })
+vim.api.nvim_set_hl(0, "TodoFgTODO", { fg = nord_palette["nord12"], ctermfg = 12 })
+vim.api.nvim_set_hl(0, "TodoBgTODO",
+	{ bg = nord_palette["nord12"], fg = nord_fg, ctermbg = 12, ctermfg = 6, bold = true })
 
-	-- Green
-	-- NOTE: sample note string
-	vim.api.nvim_set_hl(0, "TodoSignNOTE", { ctermfg = "DarkGreen" })
-	vim.api.nvim_set_hl(0, "TodoFgNOTE", { ctermfg = "DarkGreen" })
-	vim.api.nvim_set_hl(0, "TodoBgNOTE", { ctermbg = "DarkGreen", ctermfg = "White", bold = true })
+-- Yellow
+-- WARN: sample warn string
+vim.api.nvim_set_hl(0, "TodoSignWARN", { fg = nord_palette["nord13"], ctermfg = 13 })
+vim.api.nvim_set_hl(0, "TodoFgWARN", { fg = nord_palette["nord13"], ctermfg = 13 })
+vim.api.nvim_set_hl(0, "TodoBgWARN",
+	{ bg = nord_palette["nord13"], fg = nord_fg, ctermbg = 13, ctermfg = 6, bold = true })
 
-	-- Cyan
-	-- MARK: sample mark string
-	vim.api.nvim_set_hl(0, "TodoSignMARK", { ctermfg = "Cyan" })
-	vim.api.nvim_set_hl(0, "TodoFgMARK", { ctermfg = "Cyan" })
-	vim.api.nvim_set_hl(0, "TodoBgMARK", { ctermbg = "Cyan", ctermfg = "White", bold = true })
+-- Green
+-- NOTE: sample note string
+vim.api.nvim_set_hl(0, "TodoSignNOTE", { fg = nord_palette["nord14"], ctermfg = 14 })
+vim.api.nvim_set_hl(0, "TodoFgNOTE", { fg = nord_palette["nord14"], ctermfg = 14 })
+vim.api.nvim_set_hl(0, "TodoBgNOTE",
+	{ bg = nord_palette["nord14"], fg = nord_fg, ctermbg = 14, ctermfg = 6, bold = true })
 
-	-- Blue
-	-- HACK: sample hack string
-	vim.api.nvim_set_hl(0, "TodoSignHACK", { ctermfg = "DarkBlue" })
-	vim.api.nvim_set_hl(0, "TodoFgHACK", { ctermfg = "DarkBlue" })
-	vim.api.nvim_set_hl(0, "TodoBgHACK", { ctermbg = "DarkBlue", ctermfg = "White", bold = true })
+-- Cyan
+-- MARK: sample mark string
+vim.api.nvim_set_hl(0, "TodoSignMARK", { fg = nord_palette["nord8"], ctermfg = 8 })
+vim.api.nvim_set_hl(0, "TodoFgMARK", { fg = nord_palette["nord8"], ctermfg = 8 })
+vim.api.nvim_set_hl(0, "TodoBgMARK", { bg = nord_palette["nord8"], fg = nord_fg, ctermbg = 8, ctermfg = 6, bold = true })
 
-	-- Violet
-	-- PERF: sample perf string
-	vim.api.nvim_set_hl(0, "TodoSignPERF", { ctermfg = 53 })
-	vim.api.nvim_set_hl(0, "TodoFgPERF", { ctermfg = 53 })
-	vim.api.nvim_set_hl(0, "TodoBgPERF", { ctermbg = 53, ctermfg = "White", bold = true })
+-- Blue
+-- HACK: sample hack string
+vim.api.nvim_set_hl(0, "TodoSignHACK", { fg = nord_palette["nord10"], ctermfg = 10 })
+vim.api.nvim_set_hl(0, "TodoFgHACK", { fg = nord_palette["nord10"], ctermfg = 10 })
+vim.api.nvim_set_hl(0, "TodoBgHACK",
+	{ bg = nord_palette["nord10"], fg = nord_fg, ctermbg = 10, ctermfg = 6, bold = true })
 
-	-- Brown
-	-- TEST: sample test string
-	vim.api.nvim_set_hl(0, "TodoSignTEST", { ctermfg = "Brown" })
-	vim.api.nvim_set_hl(0, "TodoFgTEST", { ctermfg = "Brown" })
-	vim.api.nvim_set_hl(0, "TodoBgTEST", { ctermbg = "Brown", ctermfg = "White", bold = true })
-else
-	-- TODO: Redefine colors for gui
-end
+-- Violet
+-- PERF: sample perf string
+vim.api.nvim_set_hl(0, "TodoSignPERF", { fg = nord_palette["nord15"], ctermfg = 15 })
+vim.api.nvim_set_hl(0, "TodoFgPERF", { fg = nord_palette["nord15"], ctermfg = 15 })
+vim.api.nvim_set_hl(0, "TodoBgPERF",
+	{ bg = nord_palette["nord15"], fg = nord_fg, ctermbg = 15, ctermfg = 6, bold = true })
+
+-- Brown
+-- TEST: sample test string
+vim.api.nvim_set_hl(0, "TodoSignTEST", { fg = nord_palette["nord3"], ctermfg = 3 })
+vim.api.nvim_set_hl(0, "TodoFgTEST", { fg = nord_palette["nord3"], ctermfg = 3 })
+vim.api.nvim_set_hl(0, "TodoBgTEST", { bg = nord_palette["nord3"], fg = nord_fg, ctermbg = 3, ctermfg = 6, bold = true })
