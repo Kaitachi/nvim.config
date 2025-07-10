@@ -10,7 +10,7 @@ comments.setup({
 	},
 })
 
-local nord_palette = vim.fn['NordPalette']()
+local nord_palette = vim.fn.NordPalette()
 local nord_fg = nord_palette["nord6"]
 
 -- Red
