@@ -37,7 +37,6 @@ function ColorMyPencils(color)
 	vim.g["edge_menu_selection_background"] = 'green'
 	vim.g["edge_float_style"] = 'dim'
 
-	-- Use `:echo g:colors_name` to show current color scheme
 	color = color or "nord"
 
 	if vim.cmd.termguicolors then
@@ -45,12 +44,9 @@ function ColorMyPencils(color)
 		color = "nord"
 	end
 
+	-- Use `:colorscheme` to show current color scheme
 	vim.cmd.colorscheme(color)
 
-
-	-- Show text without background colors
-	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 	-- Show whitespaces without background colors
 	vim.api.nvim_set_hl(0, "NonText", { bg = "none", ctermfg = 237 })
@@ -59,8 +55,7 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none", ctermfg = 202 })
 
 
-	-- Custom colors for diagnostics
-
+	-- #region Custom colors for diagnostics
 	local hl_diag_error = vim.api.nvim_get_hl(0, { name = "DiagnosticError" })
 	hl_diag_error["italic"] = true
 	hl_diag_error["ctermbg"] = 9
@@ -75,21 +70,22 @@ function ColorMyPencils(color)
 
 	local hl_diag_info = vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" })
 	hl_diag_info["italic"] = true
-	hl_diag_info["ctermbg"] = 8
+	hl_diag_info["ctermbg"] = 14
 	hl_diag_info["bg"] = "NvimDarkCyan"
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", hl_diag_info)
 
 	local hl_diag_hint = vim.api.nvim_get_hl(0, { name = "DiagnosticHint" })
 	hl_diag_hint["italic"] = true
-	hl_diag_hint["ctermbg"] = 10
+	hl_diag_hint["ctermbg"] = 12
 	hl_diag_hint["bg"] = "NvimDarkBlue"
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", hl_diag_hint)
 
 	local hl_diag_ok = vim.api.nvim_get_hl(0, { name = "DiagnosticOk" })
 	hl_diag_ok["italic"] = true
-	hl_diag_ok["ctermbg"] = 14
+	hl_diag_ok["ctermbg"] = 10
 	hl_diag_ok["bg"] = "NvimDarkGreen"
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextOk", hl_diag_ok)
+	-- #endregion
 end
 
 ColorMyPencils()
