@@ -170,7 +170,7 @@ format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 disabled = false
 
 [jobs]
-symbol = "󰛡 "
+symbol = " "
 format = '[ $symbol$number ](fg:color_blue)'
 number_threshold = 2
 
