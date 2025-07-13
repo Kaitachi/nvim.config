@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { unpack(opts), desc = "Rename" })
 		vim.keymap.set('n', '<space>h', function() vim.lsp.buf.signature_help({ border = 'rounded' }) end,
 			{ unpack(opts), desc = "Show Signature Help" })
-		vim.keymap.set('n', '<C-x><C-o>', vim.lsp.buf.code_action,
+		vim.keymap.set('n', 'gA', vim.lsp.buf.code_action,
 			{ unpack(opts), desc = "Show Code Actions" })
 		--#endregion
 
@@ -56,13 +56,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		--#region Highlight when cursor is idle
 		if client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
 			local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
-			vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+			vim.api.nvim_create_autocmd({ 'CursorHold' }, {
 				buffer = event.buf,
 				group = highlight_augroup,
 				callback = vim.lsp.buf.document_highlight,
 			})
 
-			vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+			vim.api.nvim_create_autocmd({ 'CursorMoved', 'InsertEnter' }, {
 				buffer = event.buf,
 				group = highlight_augroup,
 				callback = vim.lsp.buf.clear_references,
