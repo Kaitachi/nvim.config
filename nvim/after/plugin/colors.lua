@@ -86,6 +86,30 @@ function ColorMyPencils(color)
 	hl_diag_ok["bg"] = "NvimDarkGreen"
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextOk", hl_diag_ok)
 	-- #endregion
+
+	-- # region Overwrite more general highlights
+	local nord = vim.fn.NordPalette()
+
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = nord["nord1"], ctermbg = 1 })
+	-- #endregion
+
+	-- #region Telescope Colors
+	vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = nord["nord1"], fg = nord["nord6"], ctermbg = 1 })
+	vim.api.nvim_set_hl(0, "TelescopeSelection", { reverse = true })
+	vim.api.nvim_set_hl(0, "TelescopeTitle", { fg = nord["nord8"] })
+	vim.api.nvim_set_hl(0, "TelescopePromptCounter", { fg = nord["nord14"] })
+	vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = nord["nord7"] })
+	vim.api.nvim_set_hl(0, "TelescopeResultsIdentifier", { fg = nord["nord12"] })
+	vim.api.nvim_set_hl(0, "TelescopeResultsLineNr", { fg = nord["nord7"] })
+	vim.api.nvim_set_hl(0, "TelescopeResultsNumber", { fg = nord["nord12"] })
+	vim.api.nvim_set_hl(0, "TelescopeResultsComment", { fg = nord["nord6"] })
+	-- #endregion
+
+	-- #region Which-Key Colors
+	vim.api.nvim_set_hl(0, "WhichKeyTitle", { bg = nord["nord1"], fg = nord["nord4"] })
+	vim.api.nvim_set_hl(0, "WhichKey", { fg = nord["nord6"] })
+	vim.api.nvim_set_hl(0, "WhichKeyIconOrange", { fg = nord["nord12"] })
+	-- #endregion
 end
 
 ColorMyPencils()
