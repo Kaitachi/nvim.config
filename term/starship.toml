@@ -171,7 +171,8 @@ disabled = false
 
 [jobs]
 symbol = " "
-format = '[ $symbol$number ](fg:color_blue)'
+style = "bg:color_blue"
+format = '[ $symbol$number ]($style)'
 number_threshold = 2
 
 [character]
