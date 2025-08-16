@@ -9,15 +9,13 @@
 # ...but don't ignore our nvim/ folder
 #######################################
 
-!nvim/
-nvim/plugin/
-nvim/spell/
-nvim/templates/
+!/nvim
+/nvim/plugin/packer_compiled.lua
 
 #######################################
 # ...also don't ignore these places
 #######################################
 
-!term/
-!lazygit/
+!/term/
+!/lazygit/
 

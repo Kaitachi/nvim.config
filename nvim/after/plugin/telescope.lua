@@ -1,7 +1,6 @@
 local telescope = require("telescope")
 local builtin = require('telescope.builtin')
 local strings = require('plenary.strings')
--- local frecency = require('frecency.database')
 
 telescope.setup({
 	defaults = {
@@ -23,8 +22,11 @@ telescope.setup({
 	},
 	extensions = {
 		["frecency"] = {
+			default_workspace = "CWD",
+			show_scores = true,
+			show_unindexed = true,
 			matcher = "fuzzy",
-			db_version = "v2"
+			db_version = "v2",
 		},
 		["ui-select"] = {
 			require("telescope.themes").get_cursor {
@@ -123,12 +125,9 @@ vim.keymap.set('n', '<c-bslash>b', builtin.buffers, { desc = "[Telescope] Show V
 vim.keymap.set('n', '<c-bslash>r', builtin.registers, { desc = "[Telescope] Show Vim Registers" })
 
 -- File Search
-vim.keymap.set('n', '<leader>=', '<cmd>Telescope find_files hidden=true<CR>',
-	{ desc = "[Telescope] Fuzzy-find project file names" })
--- vim.keymap.set('n', '+', builtin.oldfiles, { desc = "[Telescope] Fuzzy-find recent file names" })
 vim.keymap.set('n', '+', '<cmd>Telescope frecency workspace=CWD<CR>',
 	{ desc = "[Telescope] Frecency-find files in project" })
-vim.keymap.set('n', '<leader>f', builtin.live_grep, { desc = "[Telescope] Fuzzy-find text" })
+vim.keymap.set('n', '<space>f', builtin.live_grep, { desc = "[Telescope] Fuzzy-find text" })
 
 -- Git Commands
 vim.keymap.set('n', '<F12>', function()
