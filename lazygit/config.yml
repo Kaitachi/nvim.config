@@ -4,6 +4,8 @@ gui:
   expandedSidePanelWeight: 12
   filterMode: fuzzy
   statusPanelView: allBranchesLog
+  authorColors:
+    "Radamés Vega-Alfaro": "#8d4004"
 
 git:
   mainBranches:
