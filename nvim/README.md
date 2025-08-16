@@ -17,6 +17,9 @@ Environment Variables
 * `git update-index --assume-unchanged <path/to/file>` - Make Git ignore files (different from `.gitignore`)
 * `git ls-files -v | grep -e "^[hsmrck]"` - Show files ignored using the command above
 
+# Some more useful commands
+* `ln -s ~/.config/lazygit/config.yml ~/Library/Application\ Support/lazygit/config.yml` - Make Lazygit read our version-controlled config file
+
 # Using macOS Terminal
 For some reason, some keystrokes related to arrow keys are not properly sent by the terminal (i.e. <S-up>...). To properly set these, go to Preferences -> Profiles -> Keyboard and add the following actions:
 

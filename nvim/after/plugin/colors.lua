@@ -59,12 +59,14 @@ function ColorMyPencils(color)
 	local hl_diag_error = vim.api.nvim_get_hl(0, { name = "DiagnosticError" })
 	hl_diag_error["italic"] = true
 	hl_diag_error["ctermbg"] = 9
+	hl_diag_error["ctermfg"] = 203
 	hl_diag_error["bg"] = "NvimDarkRed"
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", hl_diag_error)
 
 	local hl_diag_warn = vim.api.nvim_get_hl(0, { name = "DiagnosticWarn" })
 	hl_diag_warn["italic"] = true
 	hl_diag_warn["ctermbg"] = 11
+	hl_diag_warn["ctermfg"] = 15
 	hl_diag_warn["bg"] = "NvimDarkYellow"
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", hl_diag_warn)
 
@@ -90,11 +92,14 @@ function ColorMyPencils(color)
 	-- # region Overwrite more general highlights
 	local nord = vim.fn.NordPalette()
 
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = nord["nord1"], ctermbg = 1 })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = nord["nord1"], ctermbg = 0 })
+	vim.api.nvim_set_hl(0, "Visual", { bg = nord["nord14"], ctermbg = 10 })
+	vim.api.nvim_set_hl(0, "Search", { bg = nord["nord10"], ctermbg = 14 })
+	vim.api.nvim_set_hl(0, "CurSearch", { bg = "NvimDarkYellow", ctermbg = 11 })
 	-- #endregion
 
 	-- #region Telescope Colors
-	vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = nord["nord1"], fg = nord["nord6"], ctermbg = 1 })
+	vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = nord["nord1"], fg = nord["nord6"], ctermbg = 0 })
 	vim.api.nvim_set_hl(0, "TelescopeSelection", { reverse = true })
 	vim.api.nvim_set_hl(0, "TelescopeTitle", { fg = nord["nord8"] })
 	vim.api.nvim_set_hl(0, "TelescopePromptCounter", { fg = nord["nord14"] })
@@ -109,6 +114,11 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "WhichKeyTitle", { bg = nord["nord1"], fg = nord["nord4"] })
 	vim.api.nvim_set_hl(0, "WhichKey", { fg = nord["nord6"] })
 	vim.api.nvim_set_hl(0, "WhichKeyIconOrange", { fg = nord["nord12"] })
+	-- #endregion
+
+	-- #region AI Tool Colors
+	vim.api.nvim_set_hl(0, "AugmentSuggestionHighlight",
+		{ bg = "NvimDarkMagenta", fg = nord["nord15"], ctermbg = 13, ctermfg = 5, italic = true })
 	-- #endregion
 end
 
