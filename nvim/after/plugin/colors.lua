@@ -101,7 +101,7 @@ function ColorMyPencils(color)
 
 	-- #region Telescope Colors
 	vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = nord["nord1"], fg = nord["nord6"], ctermbg = 0 })
-	vim.api.nvim_set_hl(0, "TelescopeSelection", { reverse = true })
+	vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = nord["nord2"], ctermbg = 8 })
 	vim.api.nvim_set_hl(0, "TelescopeTitle", { fg = nord["nord8"] })
 	vim.api.nvim_set_hl(0, "TelescopePromptCounter", { fg = nord["nord14"] })
 	vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = nord["nord7"] })
