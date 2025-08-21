@@ -26,10 +26,10 @@ vim.api.nvim_set_hl(0, "TodoBgFIX",
 -- Orange
 -- TODO: sample todo string
 bg = 12
-vim.api.nvim_set_hl(0, "TodoSignTODO", { fg = nord_palette["nord" .. bg], ctermfg = 12 })
-vim.api.nvim_set_hl(0, "TodoFgTODO", { fg = nord_palette["nord" .. bg], ctermfg = 12 })
+vim.api.nvim_set_hl(0, "TodoSignTODO", { fg = nord_palette["nord" .. bg], ctermfg = 202 })
+vim.api.nvim_set_hl(0, "TodoFgTODO", { fg = nord_palette["nord" .. bg], ctermfg = 202 })
 vim.api.nvim_set_hl(0, "TodoBgTODO",
-	{ bg = nord_palette["nord" .. bg], fg = nord_palette["nord" .. fg], ctermbg = 12, ctermfg = 7, bold = true })
+	{ bg = nord_palette["nord" .. bg], fg = nord_palette["nord" .. fg], ctermbg = 202, ctermfg = 7, bold = true })
 
 -- Yellow
 -- WARN: sample warn string
@@ -75,7 +75,7 @@ vim.api.nvim_set_hl(0, "TodoBgPERF",
 -- TEST: sample test string
 bg = 5
 fg = 3
-vim.api.nvim_set_hl(0, "TodoSignTEST", { fg = nord_palette["nord" .. bg], ctermfg = 8 })
-vim.api.nvim_set_hl(0, "TodoFgTEST", { fg = nord_palette["nord" .. bg], ctermfg = 8 })
+vim.api.nvim_set_hl(0, "TodoSignTEST", { fg = nord_palette["nord" .. bg], ctermfg = 7 })
+vim.api.nvim_set_hl(0, "TodoFgTEST", { fg = nord_palette["nord" .. bg], ctermfg = 7 })
 vim.api.nvim_set_hl(0, "TodoBgTEST",
-	{ bg = nord_palette["nord" .. bg], fg = nord_palette["nord" .. fg], ctermbg = 8, ctermfg = 7, bold = true })
+	{ bg = nord_palette["nord" .. bg], fg = nord_palette["nord" .. fg], ctermbg = 7, ctermfg = 8, bold = true })

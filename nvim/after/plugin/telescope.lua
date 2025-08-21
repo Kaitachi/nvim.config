@@ -125,6 +125,8 @@ vim.keymap.set('n', '<c-bslash>b', builtin.buffers, { desc = "[Telescope] Show V
 vim.keymap.set('n', '<c-bslash>r', builtin.registers, { desc = "[Telescope] Show Vim Registers" })
 
 -- File Search
+vim.keymap.set('n', '<leader>=', '<cmd>Telescope find_files<CR>',
+	{ desc = "[Telescope] Find files in project" })
 vim.keymap.set('n', '+', '<cmd>Telescope frecency workspace=CWD<CR>',
 	{ desc = "[Telescope] Frecency-find files in project" })
 vim.keymap.set('n', '<space>f', builtin.live_grep, { desc = "[Telescope] Fuzzy-find text" })

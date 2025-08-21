@@ -79,6 +79,7 @@ function ColorMyPencils(color)
 	local hl_diag_hint = vim.api.nvim_get_hl(0, { name = "DiagnosticHint" })
 	hl_diag_hint["italic"] = true
 	hl_diag_hint["ctermbg"] = 12
+	hl_diag_hint["ctermfg"] = 15
 	hl_diag_hint["bg"] = "NvimDarkBlue"
 	vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", hl_diag_hint)
 
@@ -93,8 +94,8 @@ function ColorMyPencils(color)
 	local nord = vim.fn.NordPalette()
 
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = nord["nord1"], ctermbg = 0 })
-	vim.api.nvim_set_hl(0, "Visual", { bg = nord["nord14"], ctermbg = 10 })
-	vim.api.nvim_set_hl(0, "Search", { bg = nord["nord10"], ctermbg = 14 })
+	vim.api.nvim_set_hl(0, "Visual", { bg = "NvimDarkGreen", ctermbg = 10 })
+	vim.api.nvim_set_hl(0, "Search", { bg = "NvimDarkGrey2", ctermbg = 237 })
 	vim.api.nvim_set_hl(0, "CurSearch", { bg = "NvimDarkYellow", ctermbg = 11 })
 	-- #endregion
 
