@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
 
 	-- Vim enhancements
 	use({ 'folke/flash.nvim' })    -- Better searching
+	use({ 'folke/snacks.nvim' })   -- Swiss army knife
 	use({ 'folke/which-key.nvim' }) -- Display keyboard shortcuts as you go
 	use({ 'mbbill/undotree' })     -- Git for undo/redo commands
 	use({ 'stevearc/overseer.nvim' }) -- Terminal within neovim

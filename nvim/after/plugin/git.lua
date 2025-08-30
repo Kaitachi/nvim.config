@@ -1,19 +1,6 @@
 local gitsigns = require("gitsigns")
 local linker = require("gitlinker")
 
-function GitToggle()
-	local fugitive_bufnr = vim.fn.bufnr("^fugitive:")
-	local fugitive_winid = vim.fn.bufwinid(fugitive_bufnr)
-
-	if fugitive_bufnr >= 0 and fugitive_winid >= 0 then
-		vim.api.nvim_win_close(fugitive_winid, false)
-	else
-		vim.cmd(":G")
-	end
-end
-
-vim.keymap.set("n", "<F10>", GitToggle, { desc = "Toggle Git Status" })
-
 vim.opt.updatetime = 100
 
 gitsigns.setup {
@@ -31,4 +18,4 @@ linker.setup({
 	highlight_duration = 100
 })
 
-vim.keymap.set({ "n", "v" }, "gy", linker.link, { desc = "Yank GitHub URL" })
+vim.keymap.set({ "n", "v" }, "gy", linker.link, { desc = "[GitLinker] Yank GitHub URL" })
