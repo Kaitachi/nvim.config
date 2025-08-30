@@ -1,3 +1,7 @@
+keybinding:
+  universal:
+    quit: <F10>
+
 gui:
   nerdFontsVersion: 3
   expandFocusedSidePanel: true
