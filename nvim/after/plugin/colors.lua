@@ -172,10 +172,12 @@ function ColorMyPencils(color)
 	set_hl("NormalFloat", { "nord1_bg" })
 	set_hl("Visual", { "ansi10_bg" })
 	set_hl("Search", { "ansi8_bg" })
+	set_hl("CursorLine", { "nord2_bg" })
 	set_hl("CurSearch", { "ansi11_bg" })
 	set_hl("IncSearch", { "italic", "ansi10_bg" })
 	set_hl("LineNr", { "nord1_bg" })
 	set_hl("SignColumn", { "nord1_bg" })
+	set_hl("SnacksIndent", { "nord1_fg" })
 	-- #endregion
 
 	-- #region Telescope Colors
@@ -250,11 +252,17 @@ function ColorMyPencils(color)
 	set_hl("TodoFgPERF", { "nord15_fg" })
 	set_hl("TodoBgPERF", { "bold", "nord15_bg", "nord6_fg" })
 
-	-- Gray
+	-- White
 	-- TEST: sample test string
 	set_hl("TodoSignTEST", { "nord5_fg" })
 	set_hl("TodoFgTEST", { "nord5_fg" })
 	set_hl("TodoBgTEST", { "bold", "nord5_bg", "nord3_fg" })
+
+	-- Gray
+	-- GRAY: sample test string (not implemented)
+	set_hl("TodoSignGRAY", { "nord3_fg" })
+	set_hl("TodoFgGRAY", { "nord3_fg" })
+	set_hl("TodoBgGRAY", { "bold", "nord3_bg", "nord5_fg" })
 	-- #endregion
 end
 

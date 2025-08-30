@@ -131,17 +131,12 @@ vim.keymap.set('n', '+', '<cmd>Telescope frecency workspace=CWD<CR>',
 	{ desc = "[Telescope] Frecency-find files in project" })
 vim.keymap.set('n', '<space>f', builtin.live_grep, { desc = "[Telescope] Fuzzy-find text" })
 
--- Git Commands
--- vim.keymap.set('n', '<F12>', function()
--- 	local opts = require('telescope.themes').get_ivy({})
--- 	builtin.git_branches(opts)
--- end, { desc = "[Telescope] Show Git branches" })
-
 -- Buffer Search
 vim.keymap.set('n', '<leader>M', builtin.marks, { desc = "[Telescope] Show Vim Marks" })
+vim.keymap.set('n', '<space>s', function() builtin.lsp_document_symbols({ symbols = { "function" } }) end,
+	{ desc = "[Telescope] Show LSP Functions" })
 
 -- LSP
 vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = "[Telescope] Show LSP References", nowait = true })
 vim.keymap.set('n', '<leader>D', builtin.lsp_type_definitions, { desc = "[Telescope] Show LSP Type Definitions" })
-vim.keymap.set('n', '<leader>S', builtin.lsp_document_symbols, { desc = "[Telescope] Show LSP Document Symbols" })
 vim.keymap.set('n', '<leader>W', builtin.lsp_workspace_symbols, { desc = "[Telescope] Show LSP Workspace Symbols" })
