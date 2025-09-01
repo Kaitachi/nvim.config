@@ -163,8 +163,9 @@ function ColorMyPencils(color)
 
 	-- Code snippet to test some virtual text colors
 	-- local target_hl = vim.api.nvim_get_hl(0, { name = "test" })
-	-- vim.api.nvim_set_hl(0, "NonText", target_hl)
 	-- arst
+	-- vim.api.nvim_set_hl(0, "NonText", target_hl)
+	-- eeee = "test"
 	-- local arst
 	-- #endregion
 

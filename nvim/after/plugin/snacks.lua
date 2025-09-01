@@ -12,7 +12,7 @@ snacks.setup({
 -- lazygit config
 vim.keymap.set('n', '<F10>', function()
 	vim.api.nvim_set_hl(0, "SnacksNormal", { link = "NormalFloat" })
-	snacks.lazygit.open(lazygit_opts)
+	snacks.lazygit.open()
 end, { desc = "[Snacks] Open LazyGit" })
 vim.keymap.set('n', '<F12>', snacks.lazygit.log_file, { desc = "[Snacks] Open LazyGit Log File" })
 

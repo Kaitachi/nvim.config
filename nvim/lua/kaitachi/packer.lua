@@ -41,12 +41,11 @@ return require('packer').startup(function(use)
 	use({ 'linrongbin16/gitlinker.nvim' })
 
 	-- Vim enhancements
-	use({ 'mbbill/undotree' })      -- Git for undo/redo commands
-	use({ 'folke/flash.nvim' })     -- Better searching
-	use({ 'folke/snacks.nvim' })    -- Swiss army knife
+	use({ 'mbbill/undotree' })   -- Git for undo/redo commands
+	use({ 'folke/flash.nvim' })  -- Better searching
+	use({ 'folke/snacks.nvim' }) -- Swiss army knife
 	use({ 'folke/which-key.nvim' }) -- Display keyboard shortcuts as you go
-	use({ 'folke/edgy.nvim' })      -- Fancy layout manager
-	use({ 'akinsho/toggleterm.nvim' }) -- Terminal within neovim
+	use({ 'folke/edgy.nvim' })   -- Fancy layout manager
 
 	-- Language Server Protocol
 	-- LSP Support
