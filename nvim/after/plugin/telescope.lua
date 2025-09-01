@@ -32,51 +32,6 @@ telescope.setup({
 			require("telescope.themes").get_cursor {
 				-- even more opts
 			},
-			specific_opts = {
-				["overseer_template"] = {
-					make_indexed = function(items)
-						local indexed_items = {}
-						local widths = {
-							idx = 0,
-							command_title = 0,
-						}
-						for idx, item in ipairs(items) do
-							local entry = {
-								idx = idx,
-								["add"] = {
-									command_title = item.name,
-								},
-								text = item,
-							}
-							table.insert(indexed_items, entry)
-							widths.idx = math.max(widths.idx, strings.strdisplaywidth(entry.idx))
-							widths.command_title = math.max(widths.command_title,
-								strings.strdisplaywidth(entry.add["command_title"]))
-						end
-						return indexed_items, widths
-					end,
-					make_displayer = function(widths)
-						return require("telescope.pickers.entry_display").create {
-							separator = " ",
-							items = {
-								{ width = widths.idx + 1 }, -- +1 for ":" suffix
-								{ width = widths.command_title },
-							},
-						}
-					end,
-					make_display = function(displayer)
-						return function(e)
-							return displayer {
-								{ e.value.idx .. ":",          "TelescopePromptPrefix" },
-								{ e.value.add["command_title"] },
-							}
-						end
-					end,
-					make_ordinal = function(e)
-						return e.idx .. e.add["command_title"]
-					end,
-				},
-			}
 		}
 	}
 })

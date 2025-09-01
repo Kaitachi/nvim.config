@@ -39,9 +39,11 @@ vim.opt.timeoutlen = 400
 -- Completion
 vim.opt.completeopt = "fuzzy,menu,menuone,noselect"
 
--- Splits
+-- Splits/Layouts
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.laststatus = 3
+vim.opt.splitkeep = "screen"
 
 -- Settings for vimwiki
 vim.cmd("set nocompatible")
