@@ -2,14 +2,6 @@ local edgy = require("edgy")
 
 local make_test_cmd = "make test ARGS='--lf'"
 
-local search_win = function(id)
-	for _, win_id in ipairs(vim.api.nvim_list_wins()) do
-		if win_id == id then
-			return win_id
-		end
-	end
-end
-
 local create_term = function(args)
 	local opts = {
 		interactive = false,
@@ -27,10 +19,7 @@ local create_term = function(args)
 	end
 
 	local new_term = require("snacks").terminal.toggle(make_test_cmd, opts)
-
-	vim.b[new_term.buf].term_title = "make test"
-
-	edgy.goto_main()
+	vim.b[new_term.buf].term_title = make_test_cmd
 end
 
 edgy.setup({
@@ -51,7 +40,7 @@ edgy.setup({
 				})
 			end,
 			filter = function(buf, win)
-				return vim.api.nvim_buf_get_name(buf):find(":make test")
+				return vim.api.nvim_buf_get_name(buf):find(":" .. make_test_cmd:gsub("-", "--")) ~= nil
 			end,
 		},
 	}
