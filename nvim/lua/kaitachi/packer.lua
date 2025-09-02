@@ -10,23 +10,12 @@ return require('packer').startup(function(use)
 	-- Color Schemes / UI
 	use({ 'itchyny/lightline.vim' })
 	use({ 'nordtheme/vim' })
-	use({ 'sainnhe/edge' })
 	use({ 'folke/todo-comments.nvim' })
-
-	-- Searching Superpowers
-	use({
-		'nvim-telescope/telescope.nvim',
-		requires = {
-			{ 'nvim-telescope/telescope-ui-select.nvim' },
-			{ 'nvim-telescope/telescope-frecency.nvim' },
-			{ 'nvim-lua/plenary.nvim' }
-		}
-	})
 
 	-- Treesitter (code structure parsing)
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-	use({ 'nvim-treesitter/playground' })
 	use({ 'nvim-treesitter/nvim-treesitter-context' })
+	use({ 'nvim-treesitter/playground' })
 
 	-- Harpoon (quick-access files)
 	use({
@@ -54,7 +43,7 @@ return require('packer').startup(function(use)
 		'mason-org/mason.nvim',
 		requires = 'mason-org/mason-lspconfig.nvim'
 	})
-	use({ 'onsails/lspkind.nvim' })
+	use({ 'onsails/lspkind.nvim' }) -- LSP symbol font
 
 	-- Debugger
 	use({
