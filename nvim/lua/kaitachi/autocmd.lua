@@ -86,8 +86,6 @@ vim.api.nvim_create_autocmd({ "DiagnosticChanged" }, {
 	group = au_lq,
 	callback = function()
 		vim.diagnostic.setloclist({ open = false, severity = { min = vim.diagnostic.severity.WARN } })
-
-		vim.cmd("call lightline#update()")
 	end
 })
 

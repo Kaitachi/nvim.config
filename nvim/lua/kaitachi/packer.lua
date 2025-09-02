@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
 	use({ 'wbthomason/packer.nvim' })
 
 	-- Color Schemes / UI
-	use({ 'itchyny/lightline.vim' })
+	use({ 'nvim-lualine/lualine.nvim' })
 	use({ 'nordtheme/vim' })
 	use({ 'folke/todo-comments.nvim' })
 
@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
 	})
 
 	-- Vim Git (Git for Vim)
-	use({ 'tpope/vim-fugitive' })
 	use({ 'lewis6991/gitsigns.nvim' })
 	use({ 'linrongbin16/gitlinker.nvim' })
 

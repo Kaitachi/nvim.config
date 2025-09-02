@@ -1,42 +1,4 @@
 function ColorMyPencils(color)
-	-- TODO: Wish this would exist elsewhere...
-	-- Set lightline options
-	vim.g["lightline"] = {
-		colorscheme = 'custom',
-		active = {
-			left = {
-				{ 'mode',            'paste' },
-				{ 'gitdetachedhead', 'gitbranch' },
-				{ 'readonly',        'relpath',  'modified' }
-			},
-			right = {
-				{ 'lineinfo' },
-				{ 'percent',    'diagnosticwarns', 'diagnosticerrs' },
-				{ 'fileformat', 'fileencoding',    'filetype' }
-			}
-		},
-		component_function = {
-			gitbranch = 'LightlineGitCurrentBranch',
-			relpath = 'LightlineCurrentRelativePath'
-		},
-		component_expand = {
-			gitdetachedhead = 'LightlineGitDetachedHead',
-			diagnosticwarns = 'LightlineDiagnosticWarns',
-			diagnosticerrs = 'LightlineDiagnosticErrors',
-		},
-		component_type = {
-			gitdetachedhead = 'error',
-			diagnosticwarns = 'warning',
-			diagnosticerrs = 'error'
-		},
-	}
-
-	-- Set color scheme options
-	-- vim.g["edge_style"] = 'neon'
-	-- vim.g["edge_diagnostic_virtual_text"] = 'highlighted'
-	-- vim.g["edge_menu_selection_background"] = 'green'
-	-- vim.g["edge_float_style"] = 'dim'
-
 	color = color or "nord"
 
 	if vim.cmd.termguicolors then
