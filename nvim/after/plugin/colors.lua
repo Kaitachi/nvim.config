@@ -172,6 +172,9 @@ function ColorMyPencils(color)
 	-- #endregion
 
 	-- #region Todo Colors
+	-- Reset highlights
+	set_hl("Todo", {})
+
 	-- Red
 	-- FIX: sample fix string
 	set_hl("TodoSignFIX", { "nord11_fg" })

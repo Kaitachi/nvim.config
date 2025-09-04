@@ -5,6 +5,7 @@ snacks.setup({
 	indent = {},
 	input = {},
 	lazygit = {},
+	picker = {},
 })
 
 -- default highlight: NormalFloat
@@ -45,4 +46,7 @@ vim.keymap.set('n', '+', snacks.picker.smart, { desc = "[Snacks] Smart Find File
 vim.keymap.set('n', '<leader>f', function()
 	snacks.picker.grep({ live = true })
 end, { desc = "[Snacks] Fuzzy-Find Text" })
+
+-- LSP
+vim.keymap.set('n', '<space>f', snacks.picker.lsp_symbols, { desc = "[Snacks] Show LSP Functions" })
 --#endregion
