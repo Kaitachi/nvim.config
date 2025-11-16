@@ -16,6 +16,7 @@
 # ...also don't ignore these places
 #######################################
 
-!/term/
 !/lazygit/
+!/term/
+!/zellij/
 
